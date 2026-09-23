@@ -1,0 +1,2765 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <meta data-sandbox-injected="" http-equiv="Content-Security-Policy" content="
+          default-src 'none';
+          base-uri 'none';
+          connect-src https://fonts.gstatic.com https://www.gstatic.com;
+          font-src https://fonts.gstatic.com data:;
+          form-action 'none';
+          
+          worker-src blob: https://*.scf.usercontent.goog;
+          img-src data: https://encrypted-tbn0.gstatic.com https://encrypted-tbn1.gstatic.com https://encrypted-tbn2.gstatic.com https://encrypted-tbn3.gstatic.com ;
+          media-src 'none';
+          object-src 'none';
+          script-src 'unsafe-inline' 'unsafe-eval' https://www.gstatic.com https://widgetlibs.static.usercontent.goog https://*.scf.usercontent.goog;
+          style-src 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://www.gstatic.com/;">
+      <meta data-sandbox-injected="" charset="UTF-8">
+      <meta data-sandbox-injected="" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="enable-onep-api" content="false"><script data-sandbox-injected="true">(function(){var g=Object.defineProperty,k=globalThis,l=function(a,b){if(b)a:{var c=k;a=a.split(".");for(var d=0;d<a.length-1;d++){var e=a[d];if(!(e in c))break a;c=c[e]}a=a[a.length-1];d=c[a];b=b(d);b!=d&&b!=null&&g(c,a,{configurable:!0,writable:!0,value:b})}};l("Promise.withResolvers",function(a){return a?a:function(){var b,c;return{promise:new Promise(function(d,e){b=d;c=e}),resolve:b,reject:c}}});var m=function(a){return typeof a==="object"&&a!==null&&"kind"in a&&typeof a.kind==="string"&&("payload"in a||a.kind==="___CROSS_FRAME_HANDSHAKE___")},n=class{constructor(){this.j=new Map}i(a){var b=a.data;if(m(b)){let c=b.payload;if(b=this.j.get(b.kind))(a=a.ports&&a.ports.length>0?a.ports:void 0)?b(c,a):b(c)}}sendMessage(a,b,c){if(!this.port)throw Error("a");a={kind:String(a),payload:b||{}};c&&c.length>0?this.port.postMessage(a,c):this.port.postMessage(a)}},p=async function(a){var b=window.parent;
+return a.h?{}:new Promise(c=>{var d=e=>{e.source===b&&m(e.data)&&e.data.kind==="___CROSS_FRAME_HANDSHAKE___"&&(window.removeEventListener("message",d),a.port=e.ports[0],a.port.onmessage=a.i.bind(a),a.h=!0,c(e.data.payload||{}))};window.addEventListener("message",d)})},q=class extends n{constructor(){super(...arguments);this.h=!1}};if(typeof window!=="undefined"&&window.history){let a=window.history.replaceState.bind(window.history);window.history.replaceState=(c,d,e)=>{try{a(c,d,e)}catch{}};let b=window.history.pushState.bind(window.history);window.history.pushState=(c,d,e)=>{try{b(c,d,e)}catch{}}}
+if(typeof window!=="undefined"&&window.fetch){let a=window.fetch.bind(window);window.fetch=async(...b)=>{try{return await a(...b)}catch(c){b=b[0];b=typeof b==="string"?b:b&&typeof b==="object"&&"url"in b?String(b.url||""):String(b||"");if(b.includes("tracking")||b.includes("analytics")||b.includes("beacon"))return new Response(null,{status:204});throw c;}}}var {promise:r,resolve:t}=Promise.withResolvers(),{promise:u,resolve:v}=Promise.withResolvers(),w=!1;
+(async function(){var a=new q,b=await p(a);b&&b.enableSandboxToEditorSync&&(w=!!b.enableSandboxToEditorSync);if(b&&b.initialPayload){let c=b.initialPayload;window.initialPayload=c;window.setTimeout(()=>{window.dispatchEvent(new MessageEvent("message",{data:c}))},0)}t(a);(a=a.port)&&v(a)})();function x(a){r.then(b=>{b.sendMessage("ERROR",{error:a})})}window.onerror=(a,b,c,d,e)=>{x(e);return!0};
+window.onunhandledrejection=a=>{var b=String(a.reason||"");b.includes("Failed to fetch")||b.includes("Content Security Policy")||b.includes("replaceState")||x(Error(a.reason));a.preventDefault()};
+window.document.addEventListener("DOMContentLoaded",()=>{r.then(a=>{a.sendMessage("ISOLATE_READY",{});var b=window.document.querySelector("#resize-target")||window.document.body,c=NaN,d=NaN,e=!1;(new ResizeObserver(()=>{e||(e=!0,window.requestAnimationFrame(()=>{e=!1;var f=Math.ceil(b.scrollHeight),h=Math.ceil(b.scrollWidth);f===c&&h===d||f===0&&h===0||(c=f,d=h,a.sendMessage("RESIZE",{height:f,width:h}))}))})).observe(b);if(w){let f;(new MutationObserver(()=>{f&&window.clearTimeout(f);f=window.setTimeout(()=>
+{f=void 0;a.sendMessage("HTML_CHANGED",{html:"<!DOCTYPE html>\n"+window.document.documentElement.outerHTML})},500)})).observe(window.document.documentElement,{attributes:!0,childList:!0,subtree:!0,characterData:!0})}})});window.addEventListener("resizeRequest",()=>{r.then(a=>{var b=window.document.querySelector("#resize-target")||window.document.body,c=Math.ceil(b.scrollHeight);b=Math.ceil(b.scrollWidth);c===0&&b===0||a.sendMessage("MANUAL_RESIZE",{height:c,width:b})})});
+function y(a){var b=null;a instanceof Element?b=a:a&&a.nodeType===Node.TEXT_NODE&&(b=a.parentElement);if(!b)return null;for(a=b;a&&a!==window.document.body;){if(a.matches('a,button,input,textarea,select,option,details,summary,area,[jsaction],[data-jsaction],[role],[tabindex]:not([tabindex="-1"])'))return z(a);if(a instanceof HTMLElement&&a.isContentEditable)return z(a);a=a.parentElement}return null}
+function z(a){var b={tagName:a.tagName.toUpperCase(),attributes:{}},c=["role","jsaction","data-jsaction","tabindex"];for(let d of c)c=a.getAttribute(d),c!==null&&(b.attributes[d]=c);a instanceof HTMLElement&&a.isContentEditable&&(b.isContentEditable=!0);return b}window.addEventListener("click",a=>{var b=(a=a.target)?y(a):null;r.then(c=>{c.sendMessage("CLICK",{matchedNode:b})})},!0);
+window.addEventListener("request_window_open",a=>{var b=a.detail;r.then(c=>{c.sendMessage("REQUEST_WINDOW_OPEN",{url:b.url,hostname:b.hostname,target:b.target,features:b.features,skipConfirmation:b.skipConfirmation})})});window.sandboxConsoleLog=(a,b)=>{r.then(c=>{c.sendMessage("CONSOLE_LOG",{logLevel:a,message:b})})};if(document.querySelector('meta[name="enable-onep-api"]')?.getAttribute("content")==="true"){let a=!1;window.claimPortReady=()=>{if(a)return null;a=!0;return u}}window.logError=x;}).call(this);</script><script>(function(){function f(b){return["https://www.google.com/maps/","https://maps.google.com/","https://www.youtube.com/watch?v=","https://www.youtube.com/v/","https://youtu.be/"].some(a=>b.startsWith(a))}window.open=(b,a,d)=>{var c,e=!1;if(b)try{if(c=b instanceof URL?b.toString():String(b)){var g=(new URL(c,window.location.href)).hostname;e=f(c)}}catch(h){}window.dispatchEvent(new CustomEvent("request_window_open",{detail:{url:c,hostname:g,target:a,features:d,h:e}}));return null};
+window.addEventListener("click",b=>{var a=b.target.closest("a");if(a&&a.getAttribute("target")==="_blank"&&a.hasAttribute("href")){a=a.getAttribute("href");let d,c=!1;try{d=(new URL(a,window.location.href)).hostname,c=f(a)}catch(e){}b.preventDefault();b.stopPropagation();window.dispatchEvent(new CustomEvent("request_window_open",{detail:{url:a,hostname:d,target:"_blank",h:c}}))}},!0);}).call(this);</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="Generated%20Interactive%20Widget_frame_save_x1_files/css2_Dz-i.css" rel="stylesheet"><link href="Generated%20Interactive%20Widget_frame_save_x1_files/icon_Dz-i.css" rel="stylesheet"><title>Generated Interactive Widget</title><script type="module" crossorigin="">
+import { jsx, jsxs } from 'https://widgetlibs.static.usercontent.goog/react/jsx-runtime-Dc9ViRTo.js';
+import React, { useState, useEffect, useMemo } from 'https://widgetlibs.static.usercontent.goog/react-Dd1pKoqe.js';
+import ReactDOM from 'https://widgetlibs.static.usercontent.goog/react-dom/client-BTuQ-l8_.js';
+import { ErrorBoundary } from 'https://widgetlibs.static.usercontent.goog/react-error-boundary-BY2GTZrN.js';
+import * as Slider from 'https://widgetlibs.static.usercontent.goog/@radix-ui/react-slider-DXk-CvUR.js';
+
+true              &&(function polyfill() {
+	const relList = document.createElement("link").relList;
+	if (relList && relList.supports && relList.supports("modulepreload")) return;
+	for (const link of document.querySelectorAll("link[rel=\"modulepreload\"]")) processPreload(link);
+	new MutationObserver((mutations) => {
+		for (const mutation of mutations) {
+			if (mutation.type !== "childList") continue;
+			for (const node of mutation.addedNodes) if (node.tagName === "LINK" && node.rel === "modulepreload") processPreload(node);
+		}
+	}).observe(document, {
+		childList: true,
+		subtree: true
+	});
+	function getFetchOpts(link) {
+		const fetchOpts = {};
+		if (link.integrity) fetchOpts.integrity = link.integrity;
+		if (link.referrerPolicy) fetchOpts.referrerPolicy = link.referrerPolicy;
+		if (link.crossOrigin === "use-credentials") fetchOpts.credentials = "include";
+		else if (link.crossOrigin === "anonymous") fetchOpts.credentials = "omit";
+		else fetchOpts.credentials = "same-origin";
+		return fetchOpts;
+	}
+	function processPreload(link) {
+		if (link.ep) return;
+		link.ep = true;
+		const fetchOpts = getFetchOpts(link);
+		fetch(link.href, fetchOpts);
+	}
+}());
+
+function ErrorFallback({ error }) {
+  return /* @__PURE__ */ jsxs("div", { className: "p-4 text-error bg-card rounded-xl border border-error/40 m-4", children: [
+    /* @__PURE__ */ jsx("p", { className: "font-medium text-sm", children: "HMI Telemetry System Error" }),
+    /* @__PURE__ */ jsx("pre", { className: "text-xs mt-1 text-muted-foreground overflow-auto", children: error.message })
+  ] });
+}
+function LlmGeneratedComponent() {
+  const [operationalMode, setOperationalMode] = useState("active");
+  const [loadTorque, setLoadTorque] = useState([58]);
+  /* cm const [selectedJoint, setSelectedJoint] = useState("core_torso"); */
+  const [selectedJoint, setSelectedJoint] = useState("r_wrist"); 
+  /* cm const [drillEnabled, setDrillEnabled] = useState(true); */
+   const [drillEnabled, setDrillEnabled] = useState(false);
+  const [currentRpm, setCurrentRpm] = useState(3650);
+  const [tick, setTick] = useState(0);
+  useEffect(() => {
+    let animId;
+    let lastTime = performance.now();
+    const loop = (now) => {
+      if (now - lastTime > 40) {
+        setTick((t) => (t + 1) % 1e4);
+        lastTime = now;
+      }
+      animId = requestAnimationFrame(loop);
+    };
+    animId = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(animId);
+  }, []);
+  useEffect(() => {
+    const modeMultiplier = operationalMode === "boost" ? 1.35 : operationalMode === "standby" ? 0.25 : 1;
+    const baseTarget = drillEnabled ? (2800 + loadTorque[0] * 18) * modeMultiplier : 0;
+    const jitter = drillEnabled ? Math.sin(tick * 0.4) * 45 + Math.cos(tick * 0.25) * 20 : 0;
+    const targetRpm = Math.max(0, baseTarget + jitter);
+    setCurrentRpm((prev) => {
+      const diff = targetRpm - prev;
+      return Math.abs(diff) < 2 ? targetRpm : prev + diff * 0.18;
+    });
+  }, [drillEnabled, loadTorque, operationalMode, tick]);
+  const joints = useMemo(
+    () => [
+      { id: "head_lidar", name: "LIDAR 360°", x: 220, y: 45, labelX: 120, labelY: 48, anchor: "end", type: "sensor" },
+      { id: "l_shoulder", name: "SHOULDER [L]", x: 170, y: 80, labelX: 95, labelY: 106, anchor: "end", type: "actuator" },
+      { id: "l_elbow", name: "ELBOW [L]", x: 141, y: 125, labelX: 95, labelY: 155, anchor: "end", type: "actuator" },
+      { id: "core_torso", name: "CORE MCU", x: 220, y: 152, labelX: 110, labelY: 215, anchor: "end", type: "core" },
+      { id: "r_shoulder", name: "SHOULDER [R]", x: 272, y: 80, labelX: 345, labelY: 106, anchor: "start", type: "actuator" },
+      { id: "r_wrist", name: "END-EFFECTOR", x: 318, y: 180, labelX: 345, labelY: 205, anchor: "start", type: "actuator" },
+      { id: "l_hip", name: "PELVIS / HIP", x: 199, y: 200, labelX: 110, labelY: 260, anchor: "end", type: "actuator" },
+      { id: "l_knee", name: "KNEE DRIVE [L]", x: 195, y: 264, labelX: 110, labelY: 300, anchor: "end", type: "actuator" },
+      { id: "r_knee", name: "KNEE DRIVE [R]", x: 246, y: 264, labelX: 345, labelY: 290, anchor: "start", type: "actuator" },
+      { id: "feet_sensors", name: "6-AXIS FT BASE", x: 220, y: 322, labelX: 345, labelY: 335, anchor: "start", type: "sensor" }
+    ],
+    []
+  );
+  const telemetry = useMemo(() => {
+    const torque = loadTorque[0];
+    const modeMultiplier = operationalMode === "boost" ? 1.4 : operationalMode === "standby" ? 0.35 : 1;
+    const computedLoad = torque * modeMultiplier;
+    const busVoltage = (48.0 + (100 - computedLoad) * 0.015 + Math.sin(tick * 0.08) * 0.12).toFixed(1);
+    const busCurrent = (4.2 + computedLoad * 0.28 + (drillEnabled ? currentRpm * 18e-4 : 0)).toFixed(1);
+    const internalTemp = (27.2 + computedLoad * 0.38 + (drillEnabled ? 5.5 : 0) + Math.sin(tick * 0.05) * 0.3).toFixed(1);
+    const syncRate = Math.min(100, Math.max(94, 99.7 - computedLoad * 0.035 + Math.cos(tick * 0.05) * 0.15)).toFixed(1);
+    const isThermalWarning = parseFloat(internalTemp) > 65;
+    const isTorqueWarning = torque >= 80;
+    const isRpmWarning = currentRpm > 4200;
+    return {
+      busVoltage,
+      busCurrent,
+      internalTemp,
+      syncRate,
+      isThermalWarning,
+      isTorqueWarning,
+      isRpmWarning
+    };
+  }, [loadTorque, operationalMode, tick, drillEnabled, currentRpm]);
+  const trackingBars = useMemo(() => {
+    const t = tick;
+    const tq = loadTorque[0];
+    const m = operationalMode === "boost" ? 1.25 : operationalMode === "standby" ? 0.4 : 1;
+    return [
+      {
+        id: "hip_load",
+        label: "HIP FLEXION ACTUATOR",
+        val: Math.min(100, Math.max(12, 38 + tq * 0.42 * m + Math.sin(t * 0.12) * 5)),
+        status: tq > 82 ? "CRIT" : "NOMINAL",
+        unit: "Nm",
+        color: tq > 82 ? "bg-error" : "bg-primary"
+      },
+      {
+        id: "knee_torque",
+        label: "KNEE HARMONIC DRIVE",
+        val: Math.min(100, Math.max(10, 44 + tq * 0.38 * m + Math.cos(t * 0.1) * 6)),
+        status: tq > 85 ? "WARN" : "OPTIMAL",
+        unit: "Nm",
+        color: tq > 85 ? "bg-warning" : "bg-success"
+      },
+      {
+        id: "arm_vel",
+        label: "ARM JOINT KINEMATICS",
+        val: Math.min(100, Math.max(8, (drillEnabled ? 65 : 20) * m + Math.sin(t * 0.2) * 8)),
+        status: drillEnabled ? "ACTIVE" : "IDLE",
+        unit: "rad/s",
+        color: drillEnabled ? "bg-primary" : "bg-muted-foreground"
+      },
+      {
+        id: "thermal_flux",
+        label: "THERMAL CORE LOAD",
+        val: Math.min(100, Math.max(15, parseFloat(telemetry.internalTemp) * 1.25)),
+        status: telemetry.isThermalWarning ? "OVERHEAT" : "NORMAL",
+        unit: "°C",
+        color: telemetry.isThermalWarning ? "bg-error" : "bg-warning"
+      },
+      {
+        id: "rpm_util",
+        label: "ROTARY TOOL ENGAGEMENT",
+        val: Math.min(100, Math.max(0, currentRpm / 5e3 * 100)),
+        status: telemetry.isRpmWarning ? "HI-RPM" : drillEnabled ? "ENGAGED" : "OFFLINE",
+        unit: "RPM",
+        color: telemetry.isRpmWarning ? "bg-error" : drillEnabled ? "bg-primary" : "bg-muted-foreground"
+      },
+      {
+        id: "bus_sync",
+        label: "CAN FD BUS SYNCHRONY",
+        val: parseFloat(telemetry.syncRate),
+        status: "LOCKED",
+        unit: "%",
+        color: "bg-success"
+      }
+    ];
+  }, [tick, loadTorque, operationalMode, drillEnabled, telemetry, currentRpm]);
+  const selectedJointData = joints.find((j) => j.id === selectedJoint) || joints[3];
+  return /* @__PURE__ */ jsx(ErrorBoundary, { FallbackComponent: ErrorFallback, children: /* @__PURE__ */ jsxs("div", { className: "w-full bg-background-cm text-foreground select-none font-sans flex flex-col border border-border rounded-xl shadow-xs overflow-hidden", children: [
+    /* @__PURE__ */ jsxs("div", { className: "flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 bg-card border-b border-border text-xs font-mono", children: [
+      /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2.5", children: [
+        /* @__PURE__ */ jsx(
+          "span",
+          {
+            className: `w-2.5 h-2.5 rounded-full transition-colors ${telemetry.isThermalWarning || telemetry.isTorqueWarning ? "bg-error animate-ping" : drillEnabled ? "bg-success animate-pulse" : "bg-warning"}`
+          }
+        ),
+        /* @__PURE__ */ jsx("span", { className: "font-bold text-foreground tracking-wider", children: "ARS UNITREE H1 · TELEMETRY MONITOR" }),
+        /* @__PURE__ */ jsxs("span", { className: "px-2 py-0.5 rounded text-[10px] font-semibold bg-muted text-muted-foreground uppercase border border-border", children: [
+          "MODE: ",
+          operationalMode
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-3 text-[11px] font-medium", children: [
+        /* @__PURE__ */ jsxs("span", { className: "text-muted-foreground", children: [
+          "VOLTAGE: ",
+          /* @__PURE__ */ jsxs("strong", { className: "text-foreground", children: [
+            telemetry.busVoltage,
+            "V"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxs("span", { className: "text-muted-foreground", children: [
+          "CURRENT: ",
+          /* @__PURE__ */ jsxs("strong", { className: "text-foreground", children: [
+            telemetry.busCurrent,
+            "A"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxs("span", { className: telemetry.isThermalWarning ? "text-error font-bold" : "text-muted-foreground", children: [
+          "CORE: ",
+          /* @__PURE__ */ jsxs("strong", { className: telemetry.isThermalWarning ? "text-error" : "text-foreground", children: [
+            telemetry.internalTemp,
+            "°C"
+          ] })
+        ] })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxs("div", { className: "relative w-full bg-muted/40 border-b border-border overflow-hidden", children: [
+      /* @__PURE__ */ jsx("div", { className: "absolute inset-0 pointer-events-none opacity-30 bg-[linear-gradient(to_right,#88888820_1px,transparent_1px),linear-gradient(to_bottom,#88888820_1px,transparent_1px)] bg-[size:16px_16px]" }),
+      /* @__PURE__ */ jsxs(
+        "svg",
+        {
+          className: "w-full h-auto block select-none",
+          viewBox: "0 0 760 360",
+          role: "img",
+          "aria-label": "Humanoid robot kinematic silhouette and live HUD telemetry",
+          children: [
+            /* @__PURE__ */ jsxs("defs", { children: [
+              /* @__PURE__ */ jsxs("linearGradient", { id: "robotBodyGrad", x1: "0%", y1: "0%", x2: "100%", y2: "100%", children: [
+                /* @__PURE__ */ jsx("stop", { offset: "0%", stopColor: "#374151" }),
+                /* @__PURE__ */ jsx("stop", { offset: "100%", stopColor: "#1f2937" })
+              ] }),
+              /* @__PURE__ */ jsxs("linearGradient", { id: "coreGlow", x1: "0%", y1: "0%", x2: "100%", y2: "100%", children: [
+                /* @__PURE__ */ jsx("stop", { offset: "0%", stopColor: "var(--color-primary)" }),
+                /* @__PURE__ */ jsx("stop", { offset: "100%", stopColor: "#1d4ed8" })
+              ] }),
+              /* @__PURE__ */ jsxs("filter", { id: "glow", x: "-20%", y: "-20%", width: "140%", height: "140%", children: [
+                /* @__PURE__ */ jsx("feGaussianBlur", { stdDeviation: "3", result: "blur" }),
+                /* @__PURE__ */ jsx("feComposite", { in: "SourceGraphic", in2: "blur", operator: "over" })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsx("circle", { cx: "220", cy: "160", r: "140", fill: "none", stroke: "currentColor", strokeWidth: "1", strokeDasharray: "3 6", className: "text-foreground/10" }),
+            /* @__PURE__ */ jsx("circle", { cx: "220", cy: "160", r: "85", fill: "none", stroke: "currentColor", strokeWidth: "1", strokeDasharray: "2 4", className: "text-foreground/10" }),
+            /* @__PURE__ */ jsx("circle", { cx: "220", cy: "160", r: "28", fill: "none", stroke: "currentColor", strokeWidth: "1", className: "text-foreground/15" }),
+            /* @__PURE__ */ jsx("line", { x1: "220", y1: "15", x2: "220", y2: "345", stroke: "currentColor", strokeWidth: "1", strokeDasharray: "4 6", className: "text-foreground/10" }),
+            /* @__PURE__ */ jsx("line", { x1: "40", y1: "160", x2: "400", y2: "160", stroke: "currentColor", strokeWidth: "1", strokeDasharray: "4 6", className: "text-foreground/10" }),
+            [-100, -50, 50, 100].map((offset) => /* @__PURE__ */ jsxs("g", { children: [
+              /* @__PURE__ */ jsx("line", { x1: "215", y1: 160 + offset, x2: "225", y2: 160 + offset, stroke: "currentColor", strokeWidth: "1.5", className: "text-foreground/20" }),
+              /* @__PURE__ */ jsx("line", { x1: 220 + offset, y1: "155", x2: 220 + offset, y2: "165", stroke: "currentColor", strokeWidth: "1.5", className: "text-foreground/20" })
+            ] }, offset)),
+            /* @__PURE__ */ jsxs("g", { id: "robot-chassis", children: [
+              /* @__PURE__ */ jsx("rect", { x: "204", y: "32", width: "32", height: "24", rx: "8", fill: "url(#robotBodyGrad)", stroke: "#111827", strokeWidth: "2.5" }),
+              /* @__PURE__ */ jsx("rect", { x: "200", y: "44", width: "40", height: "7", rx: "3.5", fill: "#111827" }),
+              /* @__PURE__ */ jsx(
+                "circle",
+                {
+                  cx: 210 + Math.sin(tick * 0.2) * 10,
+                  cy: "47.5",
+                  r: "3",
+                  fill: "var(--color-primary)",
+                  filter: "url(#glow)"
+                }
+              ),
+              /* @__PURE__ */ jsx("line", { x1: "220", y1: "56", x2: "220", y2: "70", stroke: "#1f2937", strokeWidth: "8", strokeLinecap: "round" }),
+              /* @__PURE__ */ jsx(
+                "path",
+                {
+                  d: "M 182 72 L 258 72 L 246 165 L 194 165 Z",
+                  fill: "url(#robotBodyGrad)",
+                  stroke: "#111827",
+                  strokeWidth: "2.5"
+                }
+              ),
+              /* @__PURE__ */ jsx("path", { d: "M 194 82 L 246 82 L 240 102 L 200 102 Z", fill: "#111827", opacity: "0.6" }),
+              /* @__PURE__ */ jsx("line", { x1: "202", y1: "92", x2: "238", y2: "92", stroke: "#4b5563", strokeWidth: "2" }),
+              /* @__PURE__ */ jsx("line", { x1: "205", y1: "96", x2: "235", y2: "96", stroke: "#4b5563", strokeWidth: "1.5" }),
+              /* @__PURE__ */ jsx("circle", { cx: "220", cy: "132", r: "14", fill: "#0f172a", stroke: "#ffffff", strokeWidth: "1.5" }),
+              /* @__PURE__ */ jsx(
+                "circle",
+                {
+                  cx: "220",
+                  cy: "132",
+                  r: 8 + Math.sin(tick * 0.15) * 1.5,
+                  fill: "url(#coreGlow)",
+                  filter: "url(#glow)"
+                }
+              ),
+              /* @__PURE__ */ jsx(
+                "path",
+                {
+                  d: "M 190 165 L 250 165 L 238 195 L 202 195 Z",
+                  fill: "#374151",
+                  stroke: "#111827",
+                  strokeWidth: "2.5"
+                }
+              ),
+              /* @__PURE__ */ jsxs("g", { id: "left-arm", children: [
+                /* @__PURE__ */ jsx("circle", { cx: "174", cy: "80", r: "9", fill: "#111827", stroke: "#4b5563", strokeWidth: "2" }),
+                /* @__PURE__ */ jsx("line", { x1: "172", y1: "83", x2: "142", y2: "128", stroke: "#374151", strokeWidth: "10", strokeLinecap: "round" }),
+                /* @__PURE__ */ jsx("circle", { cx: "142", cy: "128", r: "7", fill: "#111827" }),
+                /* @__PURE__ */ jsx("line", { x1: "142", y1: "128", x2: "120", y2: "175", stroke: "#4b5563", strokeWidth: "8", strokeLinecap: "round" }),
+                /* @__PURE__ */ jsx("rect", { x: "112", y: "175", width: "16", height: "14", rx: "4", fill: "#1f2937", stroke: "#111827", strokeWidth: "1.5" })
+              ] }),
+              /* @__PURE__ */ jsxs("g", { id: "right-arm", children: [
+                /* @__PURE__ */ jsx("circle", { cx: "266", cy: "80", r: "9", fill: "#111827", stroke: "#4b5563", strokeWidth: "2" }),
+                /* @__PURE__ */ jsx("line", { x1: "268", y1: "83", x2: "295", y2: "128", stroke: "#374151", strokeWidth: "10", strokeLinecap: "round" }),
+                /* @__PURE__ */ jsx("circle", { cx: "295", cy: "128", r: "7", fill: "#111827" }),
+                /* @__PURE__ */ jsx("line", { x1: "295", y1: "128", x2: "315", y2: "175", stroke: "#4b5563", strokeWidth: "8", strokeLinecap: "round" }),
+                /* @__PURE__ */ jsx("rect", { x: "306", y: "175", width: "18", height: "20", rx: "3", fill: "#111827", stroke: "#4b5563", strokeWidth: "2" }),
+                /* @__PURE__ */ jsx(
+                  "path",
+                  {
+                    d: "M 311 195 L 319 195 L 315 220 Z",
+                    fill: drillEnabled ? "var(--color-warning)" : "#6b7280",
+                    stroke: "#111827",
+                    strokeWidth: "1.5",
+                    className: drillEnabled ? "animate-pulse" : ""
+                  }
+                ),
+                drillEnabled && /* @__PURE__ */ jsxs("g", { opacity: "0.8", children: [
+                  /* @__PURE__ */ jsx(
+                    "line",
+                    {
+                      x1: 310 - Math.sin(tick * 0.6) * 5,
+                      y1: "210",
+                      x2: 320 + Math.sin(tick * 0.6) * 5,
+                      y2: "210",
+                      stroke: "var(--color-warning)",
+                      strokeWidth: "2"
+                    }
+                  ),
+                  /* @__PURE__ */ jsx("circle", { cx: "315", cy: "223", r: "3", fill: "var(--color-warning)", filter: "url(#glow)" })
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxs("g", { id: "left-leg", children: [
+                /* @__PURE__ */ jsx("circle", { cx: "202", cy: "198", r: "9", fill: "#111827" }),
+                /* @__PURE__ */ jsx("line", { x1: "202", y1: "198", x2: "194", y2: "260", stroke: "#374151", strokeWidth: "12", strokeLinecap: "round" }),
+                /* @__PURE__ */ jsx("circle", { cx: "194", cy: "260", r: "8", fill: "#111827" }),
+                /* @__PURE__ */ jsx("line", { x1: "194", y1: "260", x2: "198", y2: "318", stroke: "#4b5563", strokeWidth: "10", strokeLinecap: "round" }),
+                /* @__PURE__ */ jsx("path", { d: "M 182 318 L 212 318 L 210 328 L 176 328 Z", fill: "#1f2937", stroke: "#111827", strokeWidth: "2" })
+              ] }),
+              /* @__PURE__ */ jsxs("g", { id: "right-leg", children: [
+                /* @__PURE__ */ jsx("circle", { cx: "238", cy: "198", r: "9", fill: "#111827" }),
+                /* @__PURE__ */ jsx("line", { x1: "238", y1: "198", x2: "246", y2: "260", stroke: "#374151", strokeWidth: "12", strokeLinecap: "round" }),
+                /* @__PURE__ */ jsx("circle", { cx: "246", cy: "260", r: "8", fill: "#111827" }),
+                /* @__PURE__ */ jsx("line", { x1: "246", y1: "260", x2: "242", y2: "318", stroke: "#4b5563", strokeWidth: "10", strokeLinecap: "round" }),
+                /* @__PURE__ */ jsx("path", { d: "M 226 318 L 256 318 L 262 328 L 228 328 Z", fill: "#1f2937", stroke: "#111827", strokeWidth: "2" })
+              ] }),
+              /* @__PURE__ */ jsx("ellipse", { cx: "220", cy: "334", rx: "70", ry: "6", fill: "#000000", opacity: "0.15" })
+            ] }),
+            joints.map((joint) => {
+              const isSelected = selectedJoint === joint.id;
+              return /* @__PURE__ */ jsxs("g", { className: "cursor-pointer", onClick: () => setSelectedJoint(joint.id), children: [
+                /* @__PURE__ */ jsx(
+                  "line",
+                  {
+                    x1: joint.x,
+                    y1: joint.y,
+                    x2: joint.labelX + (joint.anchor === "end" ? 5 : joint.anchor === "start" ? -5 : 0),
+                    y2: joint.labelY,
+                    stroke: isSelected ? "var(--color-primary)" : "#6b7280",
+                    strokeWidth: isSelected ? 1.5 : 1,
+                    strokeDasharray: isSelected ? void 0 : "2 3",
+                    opacity: isSelected ? 0.9 : 0.4
+                  }
+                ),
+                /* @__PURE__ */ jsx(
+                  "circle",
+                  {
+                    cx: joint.x,
+                    cy: joint.y,
+                    r: isSelected ? 6 : 4,
+                    fill: isSelected ? "var(--color-primary)" : "#374151",
+                    stroke: "#ffffff",
+                    strokeWidth: "1.5"
+                  }
+                ),
+                isSelected && /* @__PURE__ */ jsx(
+                  "circle",
+                  {
+                    cx: joint.x,
+                    cy: joint.y,
+                    r: "12",
+                    fill: "none",
+                    stroke: "var(--color-primary)",
+                    strokeWidth: "2",
+                    className: "animate-ping",
+                    style: { transformOrigin: `${joint.x}px ${joint.y}px` }
+                  }
+                ),
+                /* @__PURE__ */ jsx(
+                  "rect",
+                  {
+                    x: joint.anchor === "end" ? joint.labelX - 90 : joint.labelX - 6,
+                    y: joint.labelY - 10,
+                    width: "100",
+                    height: "18",
+                    rx: "4",
+                    fill: isSelected ? "var(--color-primary)" : "var(--color-card-cm)",
+                    stroke: isSelected ? "var(--color-primary)" : "var(--color-border)",
+                    strokeWidth: "1",
+                    className: "transition-all"
+                  }
+                ),
+                /* @__PURE__ */ jsx(
+                  "text",
+                  {
+                    x: joint.anchor === "end" ? joint.labelX - 6 : joint.labelX + 6,
+                    y: joint.labelY + 3,
+                    textAnchor: joint.anchor === "end" ? "end" : "start",
+                    fontSize: "9",
+                    fontWeight: "bold",
+                    fill: isSelected ? "#ffffff" : "currentColor",
+                    className: "font-mono tracking-tight select-none pointer-events-none",
+                    children: joint.name
+                  }
+                )
+              ] }, joint.id);
+            }),
+            /* @__PURE__ */ jsxs("g", { transform: "translate(470, 24)", children: [
+              /* @__PURE__ */ jsx("rect", { x: "0", y: "0", width: "265", height: "150", rx: "10", fill: "var(--color-card-cm)", stroke: "var(--color-border)", strokeWidth: "1.5" }),
+              /* @__PURE__ */ jsx("rect", { x: "0", y: "0", width: "265", height: "28", rx: "10", fill: "var(--color-muted-cm)" }),
+              /* @__PURE__ */ jsx("text", { x: "12", y: "18", fill: "currentColor", fontSize: "10", fontWeight: "bold", className: "font-mono tracking-wider", children: "ROTARY ACTUATOR TACHOMETER" }),
+              /* @__PURE__ */ jsx(
+                "circle",
+                {
+                  cx: "250",
+                  cy: "14",
+                  r: "4",
+                  fill: drillEnabled ? telemetry.isRpmWarning ? "var(--color-error)" : "var(--color-success)" : "#9ca3af",
+                  className: drillEnabled ? "animate-pulse" : ""
+                }
+              ),
+              /* @__PURE__ */ jsxs("g", { transform: "translate(68, 88)", children: [
+                /* @__PURE__ */ jsx(
+                  "path",
+                  {
+                    d: "M -42 12 A 44 44 0 1 1 42 12",
+                    fill: "none",
+                    stroke: "var(--color-border)",
+                    strokeWidth: "8",
+                    strokeLinecap: "round"
+                  }
+                ),
+                (() => {
+                  const pct = Math.min(1, Math.max(0, currentRpm / 5e3));
+                  const strokeLen = 220;
+                  const strokeOffset = strokeLen - strokeLen * pct * 0.85;
+                  return /* @__PURE__ */ jsx(
+                    "path",
+                    {
+                      d: "M -42 12 A 44 44 0 1 1 42 12",
+                      fill: "none",
+                      stroke: telemetry.isRpmWarning ? "var(--color-error)" : drillEnabled ? "var(--color-primary)" : "var(--color-muted-foreground)",
+                      strokeWidth: "8",
+                      strokeDasharray: strokeLen,
+                      strokeDashoffset: strokeOffset,
+                      strokeLinecap: "round",
+                      className: "transition-all duration-150"
+                    }
+                  );
+                })(),
+                (() => {
+                  const pct = Math.min(1, Math.max(0, currentRpm / 5e3));
+                  const angle = -140 + pct * 280;
+                  return /* @__PURE__ */ jsxs("g", { transform: `rotate(${angle})`, children: [
+                    /* @__PURE__ */ jsx("line", { x1: "0", y1: "0", x2: "0", y2: "-36", stroke: telemetry.isRpmWarning ? "var(--color-error)" : "currentColor", strokeWidth: "2.5", strokeLinecap: "round" }),
+                    /* @__PURE__ */ jsx("circle", { cx: "0", cy: "0", r: "4", fill: "currentColor" })
+                  ] });
+                })(),
+                /* @__PURE__ */ jsx("text", { x: "0", y: "24", textAnchor: "middle", fontSize: "8", fill: "var(--color-muted-foreground)", className: "font-mono", children: "x1000 RPM" })
+              ] }),
+              /* @__PURE__ */ jsxs("g", { transform: "translate(140, 48)", children: [
+                /* @__PURE__ */ jsx("text", { x: "0", y: "12", fill: "var(--color-muted-foreground)", fontSize: "9", className: "font-mono font-bold", children: "VELOCITY OUTPUT" }),
+                /* @__PURE__ */ jsx(
+                  "text",
+                  {
+                    x: "0",
+                    y: "38",
+                    fill: telemetry.isRpmWarning ? "var(--color-error)" : "currentColor",
+                    fontSize: "24",
+                    fontWeight: "bold",
+                    className: "font-mono tabular-nums tracking-tight",
+                    children: Math.round(currentRpm).toLocaleString()
+                  }
+                ),
+                /* @__PURE__ */ jsx("text", { x: "75", y: "38", fill: "var(--color-muted-foreground)", fontSize: "11", className: "font-mono font-bold", children: "RPM" }),
+                /* @__PURE__ */ jsx(
+                  "rect",
+                  {
+                    x: "0",
+                    y: "48",
+                    width: "112",
+                    height: "18",
+                    rx: "4",
+                    fill: drillEnabled ? telemetry.isRpmWarning ? "#fef2f2" : "#f0fdf4" : "var(--color-muted-cm)",
+                    stroke: drillEnabled ? telemetry.isRpmWarning ? "var(--color-error)" : "var(--color-success)" : "var(--color-border)",
+                    strokeWidth: "1"
+                  }
+                ),
+                /* @__PURE__ */ jsx(
+                  "text",
+                  {
+                    x: "56",
+                    y: "60",
+                    textAnchor: "middle",
+                    fill: drillEnabled ? telemetry.isRpmWarning ? "var(--color-error)" : "var(--color-success)" : "var(--color-muted-foreground)",
+                    fontSize: "9",
+                    fontWeight: "bold",
+                    className: "font-mono",
+                    children: drillEnabled ? telemetry.isRpmWarning ? "⚠️ HIGH LOAD LIMIT" : "● ROTATING ACTIVE" : "○ MOTOR IDLE"
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxs("g", { transform: "translate(12, 126)", children: [
+                /* @__PURE__ */ jsx("line", { x1: "0", y1: "12", x2: "241", y2: "12", stroke: "var(--color-border)", strokeWidth: "1", strokeDasharray: "2 3" }),
+                (() => {
+                  const points = Array.from({ length: 18 }, (_, i) => {
+                    const px = i / 17 * 241;
+                    const py = drillEnabled ? 12 - (Math.sin((tick + i * 4) * 0.2) * 6 + loadTorque[0] / 100 * 4) : 12;
+                    return `${px},${py}`;
+                  }).join(" ");
+                  return /* @__PURE__ */ jsx(
+                    "polyline",
+                    {
+                      points,
+                      fill: "none",
+                      stroke: telemetry.isRpmWarning ? "var(--color-error)" : "var(--color-primary)",
+                      strokeWidth: "1.5"
+                    }
+                  );
+                })()
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxs("g", { transform: "translate(470, 186)", children: [
+              /* @__PURE__ */ jsx("rect", { x: "0", y: "0", width: "265", height: "155", rx: "10", fill: "var(--color-card-cm)", stroke: "var(--color-border)", strokeWidth: "1.5" }),
+              /* @__PURE__ */ jsx("rect", { x: "0", y: "0", width: "265", height: "28", rx: "10", fill: "var(--color-muted-cm)" }),
+              /* @__PURE__ */ jsx("text", { x: "12", y: "18", fill: "currentColor", fontSize: "10", fontWeight: "bold", className: "font-mono tracking-wider", children: "SAFETY INTERLOCK & LOG SYSTEM" }),
+              /* @__PURE__ */ jsxs("g", { transform: "translate(12, 38)", children: [
+                /* @__PURE__ */ jsxs("g", { transform: "translate(0, 0)", children: [
+                  /* @__PURE__ */ jsx(
+                    "rect",
+                    {
+                      x: "0",
+                      y: "0",
+                      width: "241",
+                      height: "28",
+                      rx: "6",
+                      fill: telemetry.isThermalWarning ? "#fef2f2" : "var(--color-muted-cm)",
+                      stroke: telemetry.isThermalWarning ? "var(--color-error)" : "var(--color-border)",
+                      strokeWidth: "1"
+                    }
+                  ),
+                  /* @__PURE__ */ jsx(
+                    "circle",
+                    {
+                      cx: "14",
+                      cy: "14",
+                      r: "4",
+                      fill: telemetry.isThermalWarning ? "var(--color-error)" : "var(--color-success)",
+                      className: telemetry.isThermalWarning ? "animate-ping" : ""
+                    }
+                  ),
+                  /* @__PURE__ */ jsxs("text", { x: "26", y: "18", fill: "currentColor", fontSize: "9.5", fontWeight: "bold", className: "font-mono", children: [
+                    "THERMAL STATUS: ",
+                    telemetry.internalTemp,
+                    "°C"
+                  ] }),
+                  /* @__PURE__ */ jsx(
+                    "text",
+                    {
+                      x: "230",
+                      y: "18",
+                      textAnchor: "end",
+                      fill: telemetry.isThermalWarning ? "var(--color-error)" : "var(--color-success)",
+                      fontSize: "9",
+                      fontWeight: "bold",
+                      className: "font-mono",
+                      children: telemetry.isThermalWarning ? "OVERHEAT ⚠️" : "NORMAL"
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxs("g", { transform: "translate(0, 34)", children: [
+                  /* @__PURE__ */ jsx(
+                    "rect",
+                    {
+                      x: "0",
+                      y: "0",
+                      width: "241",
+                      height: "28",
+                      rx: "6",
+                      fill: telemetry.isTorqueWarning ? "#fffbeb" : "var(--color-muted-cm)",
+                      stroke: telemetry.isTorqueWarning ? "var(--color-warning)" : "var(--color-border)",
+                      strokeWidth: "1"
+                    }
+                  ),
+                  /* @__PURE__ */ jsx(
+                    "circle",
+                    {
+                      cx: "14",
+                      cy: "14",
+                      r: "4",
+                      fill: telemetry.isTorqueWarning ? "var(--color-warning)" : "var(--color-success)"
+                    }
+                  ),
+                  /* @__PURE__ */ jsxs("text", { x: "26", y: "18", fill: "currentColor", fontSize: "9.5", fontWeight: "bold", className: "font-mono", children: [
+                    "TORQUE LOAD: ",
+                    loadTorque[0],
+                    "%"
+                  ] }),
+                  /* @__PURE__ */ jsx(
+                    "text",
+                    {
+                      x: "230",
+                      y: "18",
+                      textAnchor: "end",
+                      fill: telemetry.isTorqueWarning ? "var(--color-warning)" : "var(--color-success)",
+                      fontSize: "9",
+                      fontWeight: "bold",
+                      className: "font-mono",
+                      children: telemetry.isTorqueWarning ? "HIGH TORQUE" : "BALANCED"
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxs("g", { transform: "translate(0, 68)", children: [
+                  /* @__PURE__ */ jsx("rect", { x: "0", y: "0", width: "241", height: "40", rx: "6", fill: "var(--color-muted-cm)", stroke: "var(--color-border)", strokeWidth: "1" }),
+                  /* @__PURE__ */ jsx("text", { x: "10", y: "16", fill: "var(--current-color)", fontSize: "8.5", fontWeight: "bold", className: "font-mono", children: "TARGET TELEMETRY HARNESS:" }),
+                  /* @__PURE__ */ jsxs("text", { x: "10", y: "30", fill: "var(--color-primary)", fontSize: "11", fontWeight: "bold", className: "font-mono", children: [
+                    selectedJointData.name,
+                    " (",
+                    selectedJointData.id.toUpperCase(),
+                    ")"
+                  ] }),
+                  /* @__PURE__ */ jsx("circle", { cx: "225", cy: "20", r: "5", fill: "var(--color-primary)" })
+                ] })
+              ] })
+            ] })
+          ]
+        }
+      )
+    ] }),
+    /* @__PURE__ */ jsxs("div", { className: "p-4 bg-background-cm border-b border-border", children: [
+      /* @__PURE__ */ jsxs("div", { className: "flex items-center justify-between mb-2.5", children: [
+        /* @__PURE__ */ jsx("span", { className: "text-[11px] font-bold font-mono tracking-wider text-foreground uppercase", children: "ROBOT TELEMETRY BUS & REAL-TIME JOINT TRACKING" }),
+        /* @__PURE__ */ jsx("span", { className: "text-[10px] font-bold font-mono text-foreground", children: "UPDATE FREQ: 25 HZ · AUTO-BALANCED" })
+      ] }),
+      /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1.5", children: trackingBars.map((bar) => /* @__PURE__ */ jsxs(
+        "div",
+        {
+          className: "p-1.5 bg-muted-cm rounded-lg border border-border flex flex-col gap-1.5 shadow-2xs hover:border-primary/40 transition-colors",
+          children: [
+            /* @__PURE__ */ jsxs("div", { className: "flex items-center justify-between text-[10px] font-mono", children: [
+              /* @__PURE__ */ jsx("span", { className: "text-foreground truncate font-medium max-w-[140px]", children: bar.label }),
+              /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-1.5", children: [
+                /* @__PURE__ */ jsxs("span", { className: "font-bold text-foreground tabular-nums", children: [
+                  bar.val.toFixed(0),
+                  " ",
+                  bar.unit
+                ] }),
+                /* @__PURE__ */ jsx(
+                  "span",
+                  {
+                    className: `text-[9px] font-bold px-1 py-0.2 rounded border ${bar.status === "CRIT" || bar.status === "OVERHEAT" ? "bg-error/10 text-error border-error/30" : bar.status === "WARN" || bar.status === "HI-RPM" ? "bg-warning/10 text-warning border-warning/30" : "bg-success/10 text-success border-success/30"}`,
+                    children: bar.status
+                  }
+                )
+              ] })
+            ] }),
+            /* @__PURE__ */ jsx("div", { className: "w-full bg-muted-cm h-2 rounded-full overflow-hidden p-0.5 border border-border/80", children: /* @__PURE__ */ jsx(
+              "div",
+              {
+                className: `h-full rounded-full ${bar.color} transition-all duration-150 ease-out`,
+                style: { width: `${Math.min(100, Math.max(4, bar.val))}%` }
+              }
+            ) })
+          ]
+        },
+        bar.id
+      )) })
+    ] }),
+    /* @__PURE__ */ jsx("div", { className: "p-4 bg-muted-cm flex flex-col gap-4", children: /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-4 items-center", children: [
+      /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-1.5", children: [
+         /* @__PURE__ */ jsx("span", { className: "text-[11px] font-bold font-mono tracking-wider text-foreground uppercase", children: "AI Control Profile: ARS-Automotive R2.2.5-Beta" }),
+        /* @__PURE__ */ jsx("label", { className: "text-[11px] font-mono font-bold text-foreground uppercase tracking-wider", children: "System Mode"}),
+        /* @__PURE__ */ jsx("div", { className: "flex bg-muted-cm rounded-full p-1 border border-border h-10 ", children: ["standby", "active", "boost"].map((mode) => /* @__PURE__ */ jsx(
+          "button",
+          {
+            type: "button",
+            onClick: () => setOperationalMode(mode),
+            className: `flex-1 text-center text-xs font-mono font-medium rounded-full transition-all cursor-pointer capitalize ${operationalMode === mode ? "bg-primary text-white font-bold shadow-xs" : "text-muted-foreground-cm hover:text-foreground"}`,
+            children: mode
+          },
+          mode
+        )) })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-1.5", children: [
+        /* @__PURE__ */ jsxs("div", { className: "flex justify-between items-center font-mono", children: [
+          /* @__PURE__ */ jsx("label", { className: "text-[11px] font-bold text-foreground uppercase tracking-wider", children: "Actuator Torque Load" }),
+          /* @__PURE__ */ jsxs("span", { className: `text-xs font-bold tabular-nums ${telemetry.isTorqueWarning ? "text-warning" : "text-primary"}`, children: [
+            loadTorque[0],
+            "%"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsx("div", { className: "flex items-center h-5 px-1", children: /* @__PURE__ */ jsxs(
+          Slider.Root,
+          {
+            className: "relative flex items-center w-full touch-none select-none h-6 cursor-pointer",
+            value: loadTorque,
+            onValueChange: setLoadTorque,
+            max: 100,
+            min: 10,
+            step: 1,
+            "aria-label": "Actuator Torque Load Slider",
+            children: [
+              /* @__PURE__ */ jsx(Slider.Track, { className: "relative grow rounded-full h-2 bg-muted-cm border border-border", children: /* @__PURE__ */ jsx(Slider.Range, { className: `absolute h-full rounded-full ${telemetry.isTorqueWarning ? "bg-warning" : "bg-primary"}` }) }),
+              /* @__PURE__ */ jsx(Slider.Thumb, { className: "block w-5 h-5 rounded-full bg-white border-2 border-primary shadow-sm hover:scale-110 focus:outline-none transition-transform" })
+            ]
+          }
+        ) })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-1.5", children: [
+        /* @__PURE__ */ jsxs("div", { className: "flex justify-between items-center font-mono", children: [
+          /* @__PURE__ */ jsx("label", { className: "text-[11px] font-bold text-foreground uppercase tracking-wider", children: "End-Effector: ARS Drill Tool" }),
+          /* @__PURE__ */ jsx("span", { className: `text-xs font-bold ${drillEnabled ? "text-success" : "text-muted-foreground-cm"}`, children: drillEnabled ? `${Math.round(currentRpm)} RPM` : "OFFLINE" })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "flex bg-muted-cm rounded-full p-1 border border-border h-10", children: [
+          /* @__PURE__ */ jsx(
+            "button",
+            {
+              type: "button",
+              onClick: () => setDrillEnabled(true),
+              className: `flex-1 text-center text-xs font-mono font-medium rounded-full transition-all cursor-pointer ${drillEnabled ? "bg-success text-white font-bold shadow-xs" : "text-muted-foreground-cm hover:text-foreground"}`,
+              children: "ENGAGE"
+            }
+          ),
+          /* @__PURE__ */ jsx(
+            "button",
+            {
+              type: "button",
+              onClick: () => setDrillEnabled(false),
+              className: `flex-1 text-center text-xs font-mono font-medium rounded-full transition-all cursor-pointer ${!drillEnabled ? "bg-error text-white font-bold shadow-xs" : "text-muted-foreground hover:text-foreground"}`,
+              children: "DISENGAGE"
+            }
+          )
+        ] })
+      ] })
+    ] }) })
+  ] }) });
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  /* @__PURE__ */ jsx(React.StrictMode, { children: /* @__PURE__ */ jsx(LlmGeneratedComponent, {}) })
+);
+
+</script><style>
+/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
+@layer properties {
+  @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+    *, :before, :after, ::backdrop {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
+      --tw-border-style: solid;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-ordinal: initial;
+      --tw-slashed-zero: initial;
+      --tw-numeric-figure: initial;
+      --tw-numeric-spacing: initial;
+      --tw-numeric-fraction: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
+      --tw-blur: initial;
+      --tw-brightness: initial;
+      --tw-contrast: initial;
+      --tw-grayscale: initial;
+      --tw-hue-rotate: initial;
+      --tw-invert: initial;
+      --tw-opacity: initial;
+      --tw-saturate: initial;
+      --tw-sepia: initial;
+      --tw-drop-shadow: initial;
+      --tw-drop-shadow-color: initial;
+      --tw-drop-shadow-alpha: 100%;
+      --tw-drop-shadow-size: initial;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
+      --tw-duration: initial;
+      --tw-ease: initial;
+    }
+  }
+}
+
+@layer theme {
+  :root, :host {
+    --font-sans: "Google Sans", "Roboto", sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --color-red-300: oklch(80.8% .114 19.571);
+    --color-red-500: oklch(63.7% .237 25.331);
+    --color-red-600: oklch(57.7% .245 27.325);
+    --color-emerald-900: oklch(37.8% .077 168.94);
+    --color-cyan-400: oklch(78.9% .154 211.53);
+    --color-blue-900: oklch(37.9% .146 265.522);
+    --color-blue-950: oklch(28.2% .091 267.935);
+    --color-purple-900: oklch(38.1% .176 304.987);
+    --color-zinc-500: oklch(55.2% .016 285.938);
+    --color-zinc-800: oklch(27.4% .006 286.033);
+    --color-zinc-900: oklch(21% .006 285.885);
+    --color-zinc-950: oklch(14.1% .005 285.823);
+    --color-white: #fff;
+    --spacing: .25rem;
+    --text-xs: .75rem;
+    --text-xs--line-height: calc(1 / .75);
+    --text-sm: .875rem;
+    --text-sm--line-height: calc(1.25 / .875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --tracking-tight: -.025em;
+    --tracking-wide: .025em;
+    --tracking-wider: .05em;
+    --tracking-widest: .1em;
+    --radius-sm: .25rem;
+    --radius-lg: .5rem;
+    --radius-xl: .75rem;
+    --ease-out: cubic-bezier(0, 0, .2, 1);
+    --animate-ping: ping 1s cubic-bezier(0, 0, .2, 1) infinite;
+    --animate-pulse: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite;
+    --blur-md: 12px;
+    --default-transition-duration: .15s;
+    --default-transition-timing-function: cubic-bezier(.31, .94, .34, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+    --color-primary: var(--primary, #336ef3);
+    --color-primary-hover: var(--primary-hover, #395fe1);
+    --color-error: var(--brand-red, #ea4335);
+    --color-warning: var(--brand-yellow, #fbbc04);
+    --color-success: var(--brand-green, #34a853);
+    --color-background: var(--surface-container-de-emphasis, #f7f8fa); 
+    --color-background-cm: var(--surface-container-de-emphasis, #ffffff40);
+    --color-card: var(--surface-container-de-emphasis, #f7f8fa); 
+    --color-card-cm: var(--surface-container-de-emphasis, #0a0a0a0a);
+      --color-card-hover: var(--surface-container-high, #e9ebf0);
+    --color-border: var(--divider, #dcdfe5);
+    --color-input: var(--surface-container, #f0f2f5);
+    --color-secondary: var(--surface-container-high, #e9ebf0);
+    --color-secondary-hover: var(--surface-container-highest, #e1e3e8);
+    --color-accent: var(--surface-container-highest, #e1e3e8);
+    --color-accent-foreground: var(--on-surface-default, #0a0a0a);
+    --color-muted: var(--surface-container, #f0f2f5);  
+    --color-muted-cm: var(--surface-container, #f0f2f531);
+    --color-muted-foreground: var(--on-surface-de-emphasis, #56595e);
+    --color-muted-foreground-cm: var(--on-surface-de-emphasis, #00000080);
+    --color-foreground: var(--on-surface-default, #0a0a0a);
+    --color-disabled: var(--surface-container, #f0f2f5);
+    --color-disabled-foreground: var(--disabled-foreground, #95989c);
+  }
+}
+
+@layer base {
+  *, :after, :before, ::backdrop {
+    box-sizing: border-box;
+    border: 0 solid;
+    margin: 0;
+    padding: 0;
+  }
+
+  ::file-selector-button {
+    box-sizing: border-box;
+    border: 0 solid;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, :host {
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    line-height: 1.5;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    -webkit-text-decoration: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+
+  b, strong {
+    font-weight: bolder;
+  }
+
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+
+  small {
+    font-size: 80%;
+  }
+
+  sub, sup {
+    vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+  }
+
+  sub {
+    bottom: -.25em;
+  }
+
+  sup {
+    top: -.5em;
+  }
+
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+
+  :-moz-focusring {
+    outline: auto;
+  }
+
+  progress {
+    vertical-align: baseline;
+  }
+
+  summary {
+    display: list-item;
+  }
+
+  ol, ul, menu {
+    list-style: none;
+  }
+
+  img, svg, video, canvas, audio, iframe, embed, object {
+    vertical-align: middle;
+    display: block;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  button, input, select, optgroup, textarea {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    opacity: 1;
+    background-color: #0000;
+    border-radius: 0;
+  }
+
+  ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    opacity: 1;
+    background-color: #0000;
+    border-radius: 0;
+  }
+
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+
+  ::placeholder {
+    opacity: 1;
+  }
+
+  @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentColor;
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      ::placeholder {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+
+  ::-webkit-datetime-edit {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-year-field {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-month-field {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-day-field {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-hour-field {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-minute-field {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-second-field {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-millisecond-field {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+
+  button, input:where([type="button"], [type="reset"], [type="submit"]) {
+    appearance: button;
+  }
+
+  ::file-selector-button {
+    appearance: button;
+  }
+
+  ::-webkit-inner-spin-button {
+    height: auto;
+  }
+
+  ::-webkit-outer-spin-button {
+    height: auto;
+  }
+
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+  }
+}
+
+@layer components;
+
+@layer utilities {
+  .pointer-events-auto {
+    pointer-events: auto;
+  }
+
+  .pointer-events-none {
+    pointer-events: none;
+  }
+
+  .absolute {
+    position: absolute;
+  }
+
+  .relative {
+    position: relative;
+  }
+
+  .static {
+    position: static;
+  }
+
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
+
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+
+  .top-3 {
+    top: calc(var(--spacing) * 3);
+  }
+
+  .right-0 {
+    right: calc(var(--spacing) * 0);
+  }
+
+  .right-3 {
+    right: calc(var(--spacing) * 3);
+  }
+
+  .right-4 {
+    right: calc(var(--spacing) * 4);
+  }
+
+  .bottom-2 {
+    bottom: calc(var(--spacing) * 2);
+  }
+
+  .left-3 {
+    left: calc(var(--spacing) * 3);
+  }
+
+  .left-4 {
+    left: calc(var(--spacing) * 4);
+  }
+
+  .z-0 {
+    z-index: 0;
+  }
+
+  .z-10 {
+    z-index: 10;
+  }
+
+  .z-20 {
+    z-index: 20;
+  }
+
+  .m-4 {
+    margin: calc(var(--spacing) * 4);
+  }
+
+  .mx-auto {
+    margin-inline: auto;
+  }
+
+  .-my-3 {
+    margin-block: calc(var(--spacing) * -3);
+  }
+
+  .mt-1 {
+    margin-top: calc(var(--spacing) * 1);
+  }
+
+  .mt-1\.5 {
+    margin-top: calc(var(--spacing) * 1.5);
+  }
+
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+
+  .mb-2\.5 {
+    margin-bottom: calc(var(--spacing) * 2.5);
+  }
+
+  .block {
+    display: block;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .grid {
+    display: grid;
+  }
+
+  .inline-flex {
+    display: inline-flex;
+  }
+
+  .table {
+    display: table;
+  }
+
+  .h-1 {
+    height: calc(var(--spacing) * 1);
+  }
+
+  .h-1\.5 {
+    height: calc(var(--spacing) * 1.5);
+  }
+
+  .h-2 {
+    height: calc(var(--spacing) * 2);
+  }
+
+  .h-2\.5 {
+    height: calc(var(--spacing) * 2.5);
+  }
+
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
+
+  .h-5 {
+    height: calc(var(--spacing) * 5);
+  }
+
+  .h-6 {
+    height: calc(var(--spacing) * 6);
+  }
+
+  .h-8 {
+    height: calc(var(--spacing) * 8);
+  }
+
+  .h-9 {
+    height: calc(var(--spacing) * 9);
+  }
+
+  .h-10 {
+    height: calc(var(--spacing) * 10);
+  }
+
+  .h-11 {
+    height: calc(var(--spacing) * 11);
+  }
+
+  .h-32 {
+    height: calc(var(--spacing) * 32);
+  }
+
+  .h-auto {
+    height: auto;
+  }
+
+  .h-full {
+    height: 100%;
+  }
+
+  .max-h-\[360px\] {
+    max-height: 360px;
+  }
+
+  .min-h-\[300px\] {
+    min-height: 300px;
+  }
+
+  .min-h-\[500px\] {
+    min-height: 500px;
+  }
+
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
+
+  .w-2 {
+    width: calc(var(--spacing) * 2);
+  }
+
+  .w-2\.5 {
+    width: calc(var(--spacing) * 2.5);
+  }
+
+  .w-4 {
+    width: calc(var(--spacing) * 4);
+  }
+
+  .w-5 {
+    width: calc(var(--spacing) * 5);
+  }
+
+  .w-8 {
+    width: calc(var(--spacing) * 8);
+  }
+
+  .w-9 {
+    width: calc(var(--spacing) * 9);
+  }
+
+  .w-24 {
+    width: calc(var(--spacing) * 24);
+  }
+
+  .w-32 {
+    width: calc(var(--spacing) * 32);
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  .max-w-\[140px\] {
+    max-width: 140px;
+  }
+
+  .max-w-full {
+    max-width: 100%;
+  }
+
+  .min-w-0 {
+    min-width: calc(var(--spacing) * 0);
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+
+  .flex-shrink {
+    flex-shrink: 1;
+  }
+
+  .shrink-0 {
+    flex-shrink: 0;
+  }
+
+  .flex-grow, .grow {
+    flex-grow: 1;
+  }
+
+  .border-collapse {
+    border-collapse: collapse;
+  }
+
+  .-translate-x-1 {
+    --tw-translate-x: calc(var(--spacing) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  .-translate-x-1\/2 {
+    --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  .-translate-y-1 {
+    --tw-translate-y: calc(var(--spacing) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  .-translate-y-1\/2 {
+    --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  .scale-105 {
+    --tw-scale-x: 105%;
+    --tw-scale-y: 105%;
+    --tw-scale-z: 105%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+
+  .transform {
+    transform: var(--tw-rotate-x, ) var(--tw-rotate-y, ) var(--tw-rotate-z, ) var(--tw-skew-x, ) var(--tw-skew-y, );
+  }
+
+  .animate-ping {
+    animation: var(--animate-ping);
+  }
+
+  .animate-pulse {
+    animation: var(--animate-pulse);
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .touch-none {
+    touch-action: none;
+  }
+
+  .resize {
+    resize: both;
+  }
+
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+
+  .justify-between {
+    justify-content: space-between;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .justify-end {
+    justify-content: flex-end;
+  }
+
+  .gap-0 {
+    gap: calc(var(--spacing) * 0);
+  }
+
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
+
+  .gap-1\.5 {
+    gap: calc(var(--spacing) * 1.5);
+  }
+
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+
+  .gap-2\.5 {
+    gap: calc(var(--spacing) * 2.5);
+  }
+
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+
+  .gap-5 {
+    gap: calc(var(--spacing) * 5);
+  }
+
+  .gap-x-4 {
+    column-gap: calc(var(--spacing) * 4);
+  }
+
+  .gap-x-6 {
+    column-gap: calc(var(--spacing) * 6);
+  }
+
+  .gap-y-4 {
+    row-gap: calc(var(--spacing) * 4);
+  }
+
+  .truncate {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .overflow-auto {
+    overflow: auto;
+  }
+
+  .overflow-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-visible {
+    overflow: visible;
+  }
+
+  .rounded {
+    border-radius: .25rem;
+  }
+
+  .rounded-full {
+    border-radius: 3.40282e38px;
+  }
+
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+
+  .rounded-sm {
+    border-radius: var(--radius-sm);
+  }
+
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+
+  .border-r {
+    border-right-style: var(--tw-border-style);
+    border-right-width: 1px;
+  }
+
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+
+  .border-b-2 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 2px;
+  }
+
+  .border-dashed {
+    --tw-border-style: dashed;
+    border-style: dashed;
+  }
+
+  .border-none {
+    --tw-border-style: none;
+    border-style: none;
+  }
+
+  .border-border, .border-border\/80 {
+    border-color: var(--color-border);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .border-border\/80 {
+      border-color: color-mix(in oklab, var(--color-border) 80%, transparent);
+    }
+  }
+
+  .border-error, .border-error\/30 {
+    border-color: var(--color-error);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .border-error\/30 {
+      border-color: color-mix(in oklab, var(--color-error) 30%, transparent);
+    }
+  }
+
+  .border-error\/40 {
+    border-color: var(--color-error);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .border-error\/40 {
+      border-color: color-mix(in oklab, var(--color-error) 40%, transparent);
+    }
+  }
+
+  .border-primary {
+    border-color: var(--color-primary);
+  }
+
+  .border-red-500 {
+    border-color: var(--color-red-500);
+  }
+
+  .border-red-600 {
+    border-color: var(--color-red-600);
+  }
+
+  .border-success, .border-success\/30 {
+    border-color: var(--color-success);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .border-success\/30 {
+      border-color: color-mix(in oklab, var(--color-success) 30%, transparent);
+    }
+  }
+
+  .border-transparent {
+    border-color: #0000;
+  }
+
+  .border-warning\/30 {
+    border-color: var(--color-warning);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .border-warning\/30 {
+      border-color: color-mix(in oklab, var(--color-warning) 30%, transparent);
+    }
+  }
+
+  .border-white {
+    border-color: var(--color-white);
+  }
+
+  .bg-background {
+    background-color: var(--color-background);
+  }
+
+  .bg-background-cm {
+    background-color: var(--color-background-cm);
+  }
+
+  .bg-card {
+    background-color: var(--color-card);
+  }
+
+  .bg-error, .bg-error\/10 {
+    background-color: var(--color-error);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-error\/10 {
+      background-color: color-mix(in oklab, var(--color-error) 10%, transparent);
+    }
+  }
+
+  .bg-muted {
+    background-color: var(--color-muted);
+  }
+
+  .bg-muted-foreground {
+    background-color: var(--color-muted-foreground);
+  }
+
+  .bg-muted\/40 {
+    background-color: var(--color-muted);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-muted\/40 {
+      background-color: color-mix(in oklab, var(--color-muted) 40%, transparent);
+    }
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .bg-red-500 {
+    background-color: var(--color-red-500);
+  }
+
+  .bg-success, .bg-success\/10 {
+    background-color: var(--color-success);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-success\/10 {
+      background-color: color-mix(in oklab, var(--color-success) 10%, transparent);
+    }
+  }
+
+  .bg-transparent {
+    background-color: #0000;
+  }
+
+  .bg-warning, .bg-warning\/10 {
+    background-color: var(--color-warning);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-warning\/10 {
+      background-color: color-mix(in oklab, var(--color-warning) 10%, transparent);
+    }
+  }
+
+  .bg-white {
+    background-color: var(--color-white);
+  }
+
+  .bg-zinc-900 {
+    background-color: var(--color-zinc-900);
+  }
+
+  .bg-zinc-950 {
+    background-color: var(--color-zinc-950);
+  }
+
+  .bg-gradient-to-tr {
+    --tw-gradient-position: to top right in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+
+  .bg-\[linear-gradient\(to_right\,\#0000000a_1px\,transparent_1px\)\,linear-gradient\(to_bottom\,\#0000000a_1px\,transparent_1px\)\] {
+    background-image: linear-gradient(to right, #0000000a 1px, #0000 1px), linear-gradient(#0000000a 1px, #0000 1px);
+  }
+
+  .bg-\[linear-gradient\(to_right\,\#88888820_1px\,transparent_1px\)\,linear-gradient\(to_bottom\,\#88888820_1px\,transparent_1px\)\] {
+    background-image: linear-gradient(to right, #88888820 1px, #0000 1px), linear-gradient(#88888820 1px, #0000 1px);
+  }
+
+  .from-primary {
+    --tw-gradient-from: var(--color-primary);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  .from-purple-900 {
+    --tw-gradient-from: var(--color-purple-900);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  .from-zinc-800 {
+    --tw-gradient-from: var(--color-zinc-800);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  .via-blue-900 {
+    --tw-gradient-via: var(--color-blue-900);
+    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
+  }
+
+  .via-blue-950 {
+    --tw-gradient-via: var(--color-blue-950);
+    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
+  }
+
+  .via-transparent {
+    --tw-gradient-via: transparent;
+    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
+  }
+
+  .to-emerald-900 {
+    --tw-gradient-to: var(--color-emerald-900);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  .to-primary {
+    --tw-gradient-to: var(--color-primary);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  .to-zinc-900 {
+    --tw-gradient-to: var(--color-zinc-900);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  .bg-\[size\:16px_16px\] {
+    background-size: 16px 16px;
+  }
+
+  .bg-\[size\:20px_20px\] {
+    background-size: 20px 20px;
+  }
+
+  .p-0 {
+    padding: calc(var(--spacing) * 0);
+  }
+
+  .p-0\.5 {
+    padding: calc(var(--spacing) * .5);
+  }
+
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
+
+  .p-1\.5 {
+    padding: calc(var(--spacing) * 1.5);
+  }
+
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+
+  .p-2\.5 {
+    padding: calc(var(--spacing) * 2.5);
+  }
+
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
+
+  .px-1 {
+    padding-inline: calc(var(--spacing) * 1);
+  }
+
+  .px-1\.5 {
+    padding-inline: calc(var(--spacing) * 1.5);
+  }
+
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+
+  .px-2\.5 {
+    padding-inline: calc(var(--spacing) * 2.5);
+  }
+
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+
+  .py-0 {
+    padding-block: calc(var(--spacing) * 0);
+  }
+
+  .py-0\.5 {
+    padding-block: calc(var(--spacing) * .5);
+  }
+
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
+  }
+
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
+  }
+
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+
+  .pt-3 {
+    padding-top: calc(var(--spacing) * 3);
+  }
+
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+
+  .text-\[8px\] {
+    font-size: 8px;
+  }
+
+  .text-\[9px\] {
+    font-size: 9px;
+  }
+
+  .text-\[10px\] {
+    font-size: 10px;
+  }
+
+  .text-\[11px\] {
+    font-size: 11px;
+  }
+
+  .leading-none {
+    --tw-leading: 1;
+    line-height: 1;
+  }
+
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .tracking-tight {
+    --tw-tracking: var(--tracking-tight);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .tracking-wide {
+    --tw-tracking: var(--tracking-wide);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  .tracking-wider {
+    --tw-tracking: var(--tracking-wider);
+    letter-spacing: var(--tracking-wider);
+  }
+
+  .tracking-widest {
+    --tw-tracking: var(--tracking-widest);
+    letter-spacing: var(--tracking-widest);
+  }
+
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+
+  .text-cyan-400 {
+    color: var(--color-cyan-400);
+  }
+
+  .text-error, .text-error\/80 {
+    color: var(--color-error);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .text-error\/80 {
+      color: color-mix(in oklab, var(--color-error) 80%, transparent);
+    }
+  }
+
+  .text-foreground, .text-foreground\/10 {
+    color: var(--color-foreground);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .text-foreground\/10 {
+      color: color-mix(in oklab, var(--color-foreground) 10%, transparent);
+    }
+  }
+
+  .text-foreground\/15 {
+    color: var(--color-foreground);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .text-foreground\/15 {
+      color: color-mix(in oklab, var(--color-foreground) 15%, transparent);
+    }
+  }
+
+  .text-foreground\/20 {
+    color: var(--color-foreground);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .text-foreground\/20 {
+      color: color-mix(in oklab, var(--color-foreground) 20%, transparent);
+    }
+  }
+
+  .text-muted-foreground {
+    color: var(--color-muted-foreground);
+  }
+
+ .text-muted-foreground-cm {
+    color: var(--color-muted-foreground-cm);
+  }
+  .text-primary {
+    color: var(--color-primary);
+  }
+
+  .text-red-300 {
+    color: var(--color-red-300);
+  }
+
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
+
+  .text-success {
+    color: var(--color-success);
+  }
+
+  .text-warning {
+    color: var(--color-warning);
+  }
+
+  .text-white {
+    color: var(--color-white);
+  }
+
+  .text-zinc-500 {
+    color: var(--color-zinc-500);
+  }
+
+  .text-zinc-950 {
+    color: var(--color-zinc-950);
+  }
+
+  .capitalize {
+    text-transform: capitalize;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
+  .tabular-nums {
+    --tw-numeric-spacing: tabular-nums;
+    font-variant-numeric: var(--tw-ordinal, ) var(--tw-slashed-zero, ) var(--tw-numeric-figure, ) var(--tw-numeric-spacing, ) var(--tw-numeric-fraction, );
+  }
+
+  .underline {
+    text-decoration-line: underline;
+  }
+
+  .opacity-10 {
+    opacity: .1;
+  }
+
+  .opacity-20 {
+    opacity: .2;
+  }
+
+  .opacity-25 {
+    opacity: .25;
+  }
+
+  .opacity-30 {
+    opacity: .3;
+  }
+
+  .opacity-40 {
+    opacity: .4;
+  }
+
+  .mix-blend-screen {
+    mix-blend-mode: screen;
+  }
+
+  .shadow {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, #0000001a), 0 1px 2px -1px var(--tw-shadow-color, #0000001a);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
+  .shadow-2xs {
+    --tw-shadow: 0 1px var(--tw-shadow-color, #0000000d);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
+  .shadow-md {
+    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, #0000001a), 0 2px 4px -2px var(--tw-shadow-color, #0000001a);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
+  .shadow-none {
+    --tw-shadow: 0 0 #0000;
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
+  .shadow-sm {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, #0000001a), 0 1px 2px -1px var(--tw-shadow-color, #0000001a);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
+  .shadow-xs {
+    --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, #0000000d);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
+  .ring {
+    --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
+  .ring-2 {
+    --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
+  .ring-primary, .ring-primary\/40 {
+    --tw-ring-color: var(--color-primary);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .ring-primary\/40 {
+      --tw-ring-color: color-mix(in oklab, var(--color-primary) 40%, transparent);
+    }
+  }
+
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+
+  .blur {
+    --tw-blur: blur(8px);
+    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
+  }
+
+  .filter {
+    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
+  }
+
+  .backdrop-blur-md {
+    --tw-backdrop-blur: blur(var(--blur-md));
+    -webkit-backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
+    backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
+  }
+
+  .backdrop-filter {
+    -webkit-backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
+    backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
+  }
+
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+
+  .transition-transform {
+    transition-property: transform, translate, scale, rotate;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+
+  .duration-75 {
+    --tw-duration: 75ms;
+    transition-duration: 75ms;
+  }
+
+  .duration-150 {
+    --tw-duration: .15s;
+    transition-duration: .15s;
+  }
+
+  .duration-200 {
+    --tw-duration: .2s;
+    transition-duration: .2s;
+  }
+
+  .duration-300 {
+    --tw-duration: .3s;
+    transition-duration: .3s;
+  }
+
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
+  }
+
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  @media (hover: hover) {
+    .hover\:scale-110:hover {
+      --tw-scale-x: 110%;
+      --tw-scale-y: 110%;
+      --tw-scale-z: 110%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+
+    .hover\:border-primary\/40:hover {
+      border-color: var(--color-primary);
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:border-primary\/40:hover {
+        border-color: color-mix(in oklab, var(--color-primary) 40%, transparent);
+      }
+    }
+
+    .hover\:border-primary\/50:hover {
+      border-color: var(--color-primary);
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:border-primary\/50:hover {
+        border-color: color-mix(in oklab, var(--color-primary) 50%, transparent);
+      }
+    }
+
+    .hover\:text-foreground:hover {
+      color: var(--color-foreground);
+    }
+  }
+
+  .focus\:outline-none:focus {
+    --tw-outline-style: none;
+    outline-style: none;
+  }
+
+  .data-\[state\=on\]\:bg-primary[data-state="on"] {
+    background-color: var(--color-primary);
+  }
+
+  .data-\[state\=on\]\:text-white[data-state="on"] {
+    color: var(--color-white);
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sm\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --color-primary: var(--primary, #1e5631);
+    --color-primary-hover: var(--primary-hover, #2e8b57);
+    --color-error: var(--brand-red, #ea4335);
+    --color-warning: var(--brand-yellow, #fbbc04);
+    --color-success: var(--brand-green, #34a853);
+    --color-background: var(--surface-container-de-emphasis, #0d0f14);
+    --color-card: var(--surface-container-de-emphasis, #0d0f14);
+    --color-card-hover: var(--surface-container-high, #161a23);
+    --color-border: var(--divider, #1e2530);
+    --color-input: var(--surface-container, #121620);
+    --color-secondary: var(--surface-container-high, #161a23);
+    --color-secondary-hover: var(--surface-container-highest, #222936);
+    --color-accent: var(--surface-container-highest, #222936);
+    --color-accent-foreground: var(--on-surface-default, #e6e8f0);
+    --color-muted: var(--surface-container, #121620);
+    --color-muted-foreground: var(--on-surface-de-emphasis, #8f96a3);
+    --color-foreground: var(--on-surface-default, #e6e8f0);
+    --color-disabled: var(--surface-container, #121620);
+    --color-disabled-foreground: var(--disabled-foreground, #5f6573);
+  }
+}
+
+.dark {
+  --color-primary: var(--primary, #336ef3);
+  --color-primary-hover: var(--primary-hover, #395fe1);
+  --color-error: var(--brand-red, #ea4335);
+  --color-warning: var(--brand-yellow, #fbbc04);
+  --color-success: var(--brand-green, #34a853);
+  --color-background: var(--surface-container-de-emphasis, #0d0f14);
+  --color-card: var(--surface-container-de-emphasis, #0d0f14);
+  --color-card-hover: var(--surface-container-high, #161a23);
+  --color-border: var(--divider, #1e2530);
+  --color-input: var(--surface-container, #121620);
+  --color-secondary: var(--surface-container-high, #161a23);
+  --color-secondary-hover: var(--surface-container-highest, #222936);
+  --color-accent: var(--surface-container-highest, #222936);
+  --color-accent-foreground: var(--on-surface-default, #e6e8f0);
+  --color-muted: var(--surface-container, #121620);
+  --color-muted-foreground: var(--on-surface-de-emphasis, #8f96a3);
+  --color-foreground: var(--on-surface-default, #e6e8f0);
+  --color-disabled: var(--surface-container, #121620);
+  --color-disabled-foreground: var(--disabled-foreground, #5f6573);
+}
+
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-leading {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-ordinal {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-slashed-zero {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-numeric-figure {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-numeric-spacing {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-numeric-fraction {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+
+@property --tw-blur {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-brightness {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-contrast {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-grayscale {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-hue-rotate {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-invert {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-opacity {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-saturate {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-sepia {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-drop-shadow-color {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-drop-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-drop-shadow-size {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-blur {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-brightness {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-contrast {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-grayscale {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-hue-rotate {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-invert {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-opacity {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-saturate {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-duration {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-ease {
+  syntax: "*";
+  inherits: false
+}
+
+@keyframes ping {
+  75%, 100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+</style><link href="Generated%20Interactive%20Widget_frame_save_x1_files/m=capy_widget_colors_Dz-i.css" rel="stylesheet"></head>
+    <body class="">
+  
+  <div id="root"><div class="w-full bg-background text-foreground select-none font-sans flex flex-col border border-border rounded-xl shadow-xs overflow-hidden"><div class="flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 bg-card border-b border-border text-xs font-mono"><div class="flex items-center gap-2.5"><span class="w-2.5 h-2.5 rounded-full transition-colors bg-success animate-pulse"></span><span class="font-bold text-foreground tracking-wider">UNITREE H1 · TELEMETRY MONITOR</span><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-muted text-muted-foreground uppercase border border-border">MODE: active</span></div><div class="flex items-center gap-3 text-[11px] font-medium"><span class="text-muted-foreground">VOLTAGE: <strong class="text-foreground">48.1V</strong></span><span class="text-muted-foreground">CURRENT: <strong class="text-foreground">27.3A</strong></span><span class="text-muted-foreground">CORE: <strong class="text-foreground">54.7°C</strong></span></div></div><div class="relative w-full bg-muted/40 border-b border-border overflow-hidden"><div class="absolute inset-0 pointer-events-none opacity-30 bg-[linear-gradient(to_right,#88888820_1px,transparent_1px),linear-gradient(to_bottom,#88888820_1px,transparent_1px)] bg-[size:16px_16px]"></div><svg class="w-full h-auto block select-none" viewBox="0 0 760 360" role="img" aria-label="Humanoid robot kinematic silhouette and live HUD telemetry"><defs><linearGradient id="robotBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#374151"></stop><stop offset="100%" stop-color="#1f2937"></stop></linearGradient><linearGradient id="coreGlow" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="var(--color-primary)"></stop><stop offset="100%" stop-color="#1d4ed8"></stop></linearGradient><filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur"></feGaussianBlur><feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite></filter></defs><circle cx="220" cy="160" r="140" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 6" class="text-foreground/10"></circle><circle cx="220" cy="160" r="85" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4" class="text-foreground/10"></circle><circle cx="220" cy="160" r="28" fill="none" stroke="currentColor" stroke-width="1" class="text-foreground/15"></circle><line x1="220" y1="15" x2="220" y2="345" stroke="currentColor" stroke-width="1" stroke-dasharray="4 6" class="text-foreground/10"></line><line x1="40" y1="160" x2="400" y2="160" stroke="currentColor" stroke-width="1" stroke-dasharray="4 6" class="text-foreground/10"></line><g><line x1="215" y1="60" x2="225" y2="60" stroke="currentColor" stroke-width="1.5" class="text-foreground/20"></line><line x1="120" y1="155" x2="120" y2="165" stroke="currentColor" stroke-width="1.5" class="text-foreground/20"></line></g><g><line x1="215" y1="110" x2="225" y2="110" stroke="currentColor" stroke-width="1.5" class="text-foreground/20"></line><line x1="170" y1="155" x2="170" y2="165" stroke="currentColor" stroke-width="1.5" class="text-foreground/20"></line></g><g><line x1="215" y1="210" x2="225" y2="210" stroke="currentColor" stroke-width="1.5" class="text-foreground/20"></line><line x1="270" y1="155" x2="270" y2="165" stroke="currentColor" stroke-width="1.5" class="text-foreground/20"></line></g><g><line x1="215" y1="260" x2="225" y2="260" stroke="currentColor" stroke-width="1.5" class="text-foreground/20"></line><line x1="320" y1="155" x2="320" y2="165" stroke="currentColor" stroke-width="1.5" class="text-foreground/20"></line></g><g id="robot-chassis"><rect x="204" y="32" width="32" height="24" rx="8" fill="url(#robotBodyGrad)" stroke="#111827" stroke-width="2.5"></rect><rect x="200" y="44" width="40" height="7" rx="3.5" fill="#111827"></rect><circle cx="209.15200629070475" cy="47.5" r="3" fill="var(--color-primary)" filter="url(#glow)"></circle><line x1="220" y1="56" x2="220" y2="70" stroke="#1f2937" stroke-width="8" stroke-linecap="round"></line><path d="M 182 72 L 258 72 L 246 165 L 194 165 Z" fill="url(#robotBodyGrad)" stroke="#111827" stroke-width="2.5"></path><path d="M 194 82 L 246 82 L 240 102 L 200 102 Z" fill="#111827" opacity="0.6"></path><line x1="202" y1="92" x2="238" y2="92" stroke="#4b5563" stroke-width="2"></line><line x1="205" y1="96" x2="235" y2="96" stroke="#4b5563" stroke-width="1.5"></line><circle cx="220" cy="132" r="14" fill="#0f172a" stroke="#ffffff" stroke-width="1.5"></circle><circle cx="220" cy="132" r="8.095449466241764" fill="url(#coreGlow)" filter="url(#glow)"></circle><path d="M 190 165 L 250 165 L 238 195 L 202 195 Z" fill="#374151" stroke="#111827" stroke-width="2.5"></path><g id="left-arm"><circle cx="174" cy="80" r="9" fill="#111827" stroke="#4b5563" stroke-width="2"></circle><line x1="172" y1="83" x2="142" y2="128" stroke="#374151" stroke-width="10" stroke-linecap="round"></line><circle cx="142" cy="128" r="7" fill="#111827"></circle><line x1="142" y1="128" x2="120" y2="175" stroke="#4b5563" stroke-width="8" stroke-linecap="round"></line><rect x="112" y="175" width="16" height="14" rx="4" fill="#1f2937" stroke="#111827" stroke-width="1.5"></rect></g><g id="right-arm"><circle cx="266" cy="80" r="9" fill="#111827" stroke="#4b5563" stroke-width="2"></circle><line x1="268" y1="83" x2="295" y2="128" stroke="#374151" stroke-width="10" stroke-linecap="round"></line><circle cx="295" cy="128" r="7" fill="#111827"></circle><line x1="295" y1="128" x2="315" y2="175" stroke="#4b5563" stroke-width="8" stroke-linecap="round"></line><rect x="306" y="175" width="18" height="20" rx="3" fill="#111827" stroke="#4b5563" stroke-width="2"></rect><path d="M 311 195 L 319 195 L 315 220 Z" fill="var(--color-warning)" stroke="#111827" stroke-width="1.5" class="animate-pulse"></path><g opacity="0.8"><line x1="311.25979483152275" y1="210" x2="318.74020516847725" y2="210" stroke="var(--color-warning)" stroke-width="2"></line><circle cx="315" cy="223" r="3" fill="var(--color-warning)" filter="url(#glow)"></circle></g></g><g id="left-leg"><circle cx="202" cy="198" r="9" fill="#111827"></circle><line x1="202" y1="198" x2="194" y2="260" stroke="#374151" stroke-width="12" stroke-linecap="round"></line><circle cx="194" cy="260" r="8" fill="#111827"></circle><line x1="194" y1="260" x2="198" y2="318" stroke="#4b5563" stroke-width="10" stroke-linecap="round"></line><path d="M 182 318 L 212 318 L 210 328 L 176 328 Z" fill="#1f2937" stroke="#111827" stroke-width="2"></path></g><g id="right-leg"><circle cx="238" cy="198" r="9" fill="#111827"></circle><line x1="238" y1="198" x2="246" y2="260" stroke="#374151" stroke-width="12" stroke-linecap="round"></line><circle cx="246" cy="260" r="8" fill="#111827"></circle><line x1="246" y1="260" x2="242" y2="318" stroke="#4b5563" stroke-width="10" stroke-linecap="round"></line><path d="M 226 318 L 256 318 L 262 328 L 228 328 Z" fill="#1f2937" stroke="#111827" stroke-width="2"></path></g><ellipse cx="220" cy="334" rx="70" ry="6" fill="#000000" opacity="0.15"></ellipse></g><g class="cursor-pointer"><line x1="220" y1="55" x2="115" y2="48" stroke="#6b7280" stroke-width="1" stroke-dasharray="2 3" opacity="0.4"></line><circle cx="220" cy="55" r="4" fill="#374151" stroke="#ffffff" stroke-width="1.5"></circle><rect x="10" y="38" width="106" height="18" rx="4" fill="var(--color-card)" stroke="var(--color-border)" stroke-width="1" class="transition-all"></rect><text x="104" y="51" text-anchor="end" font-size="9" font-weight="bold" fill="currentColor" class="font-mono tracking-tight select-none pointer-events-none">LIDAR 360°</text></g><g class="cursor-pointer"><line x1="168" y1="110" x2="90" y2="106" stroke="#6b7280" stroke-width="1" stroke-dasharray="2 3" opacity="0.4"></line><circle cx="168" cy="110" r="4" fill="#374151" stroke="#ffffff" stroke-width="1.5"></circle><rect x="-15" y="96" width="106" height="18" rx="4" fill="var(--color-card)" stroke="var(--color-border)" stroke-width="1" class="transition-all"></rect><text x="79" y="109" text-anchor="end" font-size="9" font-weight="bold" fill="currentColor" class="font-mono tracking-tight select-none pointer-events-none">SHOULDER [L]</text></g><g class="cursor-pointer"><line x1="135" y1="165" x2="90" y2="162" stroke="#6b7280" stroke-width="1" stroke-dasharray="2 3" opacity="0.4"></line><circle cx="135" cy="165" r="4" fill="#374151" stroke="#ffffff" stroke-width="1.5"></circle><rect x="-15" y="152" width="106" height="18" rx="4" fill="var(--color-card)" stroke="var(--color-border)" stroke-width="1" class="transition-all"></rect><text x="79" y="165" text-anchor="end" font-size="9" font-weight="bold" fill="currentColor" class="font-mono tracking-tight select-none pointer-events-none">ELBOW [L]</text></g><g class="cursor-pointer"><line x1="220" y1="152" x2="115" y2="215" stroke="var(--color-primary)" stroke-width="1.5" opacity="0.9"></line><circle cx="220" cy="152" r="6" fill="var(--color-primary)" stroke="#ffffff" stroke-width="1.5"></circle><circle cx="220" cy="152" r="12" fill="none" stroke="var(--color-primary)" stroke-width="2" class="animate-ping" style="transform-origin: 220px 152px 0px;"></circle><rect x="10" y="205" width="106" height="18" rx="4" fill="var(--color-primary)" stroke="var(--color-primary)" stroke-width="1" class="transition-all"></rect><text x="104" y="218" text-anchor="end" font-size="9" font-weight="bold" fill="#ffffff" class="font-mono tracking-tight select-none pointer-events-none">CORE MCU</text></g><g class="cursor-pointer"><line x1="272" y1="110" x2="340" y2="106" stroke="#6b7280" stroke-width="1" stroke-dasharray="2 3" opacity="0.4"></line><circle cx="272" cy="110" r="4" fill="#374151" stroke="#ffffff" stroke-width="1.5"></circle><rect x="339" y="96" width="106" height="18" rx="4" fill="var(--color-card)" stroke="var(--color-border)" stroke-width="1" class="transition-all"></rect><text x="351" y="109" text-anchor="start" font-size="9" font-weight="bold" fill="currentColor" class="font-mono tracking-tight select-none pointer-events-none">SHOULDER [R]</text></g><g class="cursor-pointer"><line x1="318" y1="200" x2="340" y2="198" stroke="#6b7280" stroke-width="1" stroke-dasharray="2 3" opacity="0.4"></line><circle cx="318" cy="200" r="4" fill="#374151" stroke="#ffffff" stroke-width="1.5"></circle><rect x="339" y="188" width="106" height="18" rx="4" fill="var(--color-card)" stroke="var(--color-border)" stroke-width="1" class="transition-all"></rect><text x="351" y="201" text-anchor="start" font-size="9" font-weight="bold" fill="currentColor" class="font-mono tracking-tight select-none pointer-events-none">END-EFFECTOR</text></g><g class="cursor-pointer"><line x1="198" y1="205" x2="115" y2="260" stroke="#6b7280" stroke-width="1" stroke-dasharray="2 3" opacity="0.4"></line><circle cx="198" cy="205" r="4" fill="#374151" stroke="#ffffff" stroke-width="1.5"></circle><rect x="10" y="250" width="106" height="18" rx="4" fill="var(--color-card)" stroke="var(--color-border)" stroke-width="1" class="transition-all"></rect><text x="104" y="263" text-anchor="end" font-size="9" font-weight="bold" fill="currentColor" class="font-mono tracking-tight select-none pointer-events-none">PELVIS / HIP</text></g><g class="cursor-pointer"><line x1="195" y1="265" x2="115" y2="300" stroke="#6b7280" stroke-width="1" stroke-dasharray="2 3" opacity="0.4"></line><circle cx="195" cy="265" r="4" fill="#374151" stroke="#ffffff" stroke-width="1.5"></circle><rect x="10" y="290" width="106" height="18" rx="4" fill="var(--color-card)" stroke="var(--color-border)" stroke-width="1" class="transition-all"></rect><text x="104" y="303" text-anchor="end" font-size="9" font-weight="bold" fill="currentColor" class="font-mono tracking-tight select-none pointer-events-none">KNEE DRIVE [L]</text></g><g class="cursor-pointer"><line x1="245" y1="265" x2="340" y2="290" stroke="#6b7280" stroke-width="1" stroke-dasharray="2 3" opacity="0.4"></line><circle cx="245" cy="265" r="4" fill="#374151" stroke="#ffffff" stroke-width="1.5"></circle><rect x="339" y="280" width="106" height="18" rx="4" fill="var(--color-card)" stroke="var(--color-border)" stroke-width="1" class="transition-all"></rect><text x="351" y="293" text-anchor="start" font-size="9" font-weight="bold" fill="currentColor" class="font-mono tracking-tight select-none pointer-events-none">KNEE DRIVE [R]</text></g><g class="cursor-pointer"><line x1="220" y1="322" x2="340" y2="335" stroke="#6b7280" stroke-width="1" stroke-dasharray="2 3" opacity="0.4"></line><circle cx="220" cy="322" r="4" fill="#374151" stroke="#ffffff" stroke-width="1.5"></circle><rect x="339" y="325" width="106" height="18" rx="4" fill="var(--color-card)" stroke="var(--color-border)" stroke-width="1" class="transition-all"></rect><text x="351" y="338" text-anchor="start" font-size="9" font-weight="bold" fill="currentColor" class="font-mono tracking-tight select-none pointer-events-none">6-AXIS FT BASE</text></g><g transform="translate(470, 24)"><rect x="0" y="0" width="265" height="150" rx="10" fill="var(--color-card)" stroke="var(--color-border)" stroke-width="1.5"></rect><rect x="0" y="0" width="265" height="28" rx="10" fill="var(--color-muted)"></rect><text x="12" y="18" fill="currentColor" font-size="10" font-weight="bold" class="font-mono tracking-wider">ROTARY ACTUATOR TACHOMETER</text><circle cx="250" cy="14" r="4" fill="var(--color-success)" class="animate-pulse"></circle><g transform="translate(68, 88)"><path d="M -42 12 A 44 44 0 1 1 42 12" fill="none" stroke="var(--color-border)" stroke-width="8" stroke-linecap="round"></path><path d="M -42 12 A 44 44 0 1 1 42 12" fill="none" stroke="var(--color-primary)" stroke-width="8" stroke-dasharray="220" stroke-dashoffset="77.19643573414808" stroke-linecap="round" class="transition-all duration-150"></path><g transform="rotate(73.82351868683713)"><line x1="0" y1="0" x2="0" y2="-36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></line><circle cx="0" cy="0" r="4" fill="currentColor"></circle></g><text x="0" y="24" text-anchor="middle" font-size="8" fill="var(--color-muted-foreground)" class="font-mono">x1000 RPM</text></g><g transform="translate(140, 48)"><text x="0" y="12" fill="var(--color-muted-foreground)" font-size="9" class="font-mono font-bold">VELOCITY OUTPUT</text><text x="0" y="38" fill="currentColor" font-size="24" font-weight="bold" class="font-mono tabular-nums tracking-tight">3,818</text><text x="75" y="38" fill="var(--color-muted-foreground)" font-size="11" class="font-mono font-bold">RPM</text><rect x="0" y="48" width="112" height="18" rx="4" fill="#f0fdf4" stroke="var(--color-success)" stroke-width="1"></rect><text x="56" y="60" text-anchor="middle" fill="var(--color-success)" font-size="9" font-weight="bold" class="font-mono">● ROTATING ACTIVE</text></g><g transform="translate(12, 126)"><line x1="0" y1="12" x2="241" y2="12" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="2 3"></line><polyline points="0,10.188796225577146 14.176470588235293,5.745848499166062 28.352941176470587,3.689304281984109 42.529411764705884,5.266635700036051 56.705882352941174,9.521054680859324 70.88235294117648,13.871887759435156 85.05882352941177,15.679977972797728 99.23529411764706,13.848562059731506 113.41176470588235,9.488552337892507 127.58823529411765,5.244672198910241 141.76470588235296,3.6912023877607574 155.94117647058823,5.770456846351097 170.11764705882354,10.221187720980735 184.2941176470588,14.34364138609558 198.47058823529412,15.637192766383379 212.6470588235294,13.317190952331668 226.8235294117647,8.7909179129495 241,4.803950137250947" fill="none" stroke="var(--color-primary)" stroke-width="1.5"></polyline></g></g><g transform="translate(470, 186)"><rect x="0" y="0" width="265" height="155" rx="10" fill="var(--color-card)" stroke="var(--color-border)" stroke-width="1.5"></rect><rect x="0" y="0" width="265" height="28" rx="10" fill="var(--color-muted)"></rect><text x="12" y="18" fill="currentColor" font-size="10" font-weight="bold" class="font-mono tracking-wider">SAFETY INTERLOCK &amp; LOG SYSTEM</text><g transform="translate(12, 38)"><g transform="translate(0, 0)"><rect x="0" y="0" width="241" height="28" rx="6" fill="var(--color-muted)" stroke="var(--color-border)" stroke-width="1"></rect><circle cx="14" cy="14" r="4" fill="var(--color-success)" class=""></circle><text x="26" y="18" fill="currentColor" font-size="9.5" font-weight="bold" class="font-mono">THERMAL STATUS: 54.7°C</text><text x="230" y="18" text-anchor="end" fill="var(--color-success)" font-size="9" font-weight="bold" class="font-mono">NORMAL</text></g><g transform="translate(0, 34)"><rect x="0" y="0" width="241" height="28" rx="6" fill="var(--color-muted)" stroke="var(--color-border)" stroke-width="1"></rect><circle cx="14" cy="14" r="4" fill="var(--color-success)"></circle><text x="26" y="18" fill="currentColor" font-size="9.5" font-weight="bold" class="font-mono">TORQUE LOAD: 58%</text><text x="230" y="18" text-anchor="end" fill="var(--color-success)" font-size="9" font-weight="bold" class="font-mono">BALANCED</text></g><g transform="translate(0, 68)"><rect x="0" y="0" width="241" height="40" rx="6" fill="var(--color-card)" stroke="var(--color-border)" stroke-width="1"></rect><text x="10" y="16" fill="var(--color-muted-foreground)" font-size="8.5" class="font-mono">TARGET TELEMETRY HARNESS:</text><text x="10" y="30" fill="var(--color-primary)" font-size="11" font-weight="bold" class="font-mono">CORE MCU (CORE_TORSO)</text><circle cx="225" cy="20" r="5" fill="var(--color-primary)"></circle></g></g></g></svg></div><div class="p-4 bg-background border-b border-border"><div class="flex items-center justify-between mb-2.5"><span class="text-[11px] font-bold font-mono tracking-wider text-muted-foreground uppercase">ACTIVE TELEMETRY BUS &amp; REAL-TIME JOINT TRACKING</span><span class="text-[10px] font-mono text-muted-foreground">UPDATE FREQ: 25 HZ · AUTO-BALANCED</span></div><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5"><div class="p-2.5 bg-card rounded-lg border border-border flex flex-col gap-1.5 shadow-2xs hover:border-primary/40 transition-colors"><div class="flex items-center justify-between text-[10px] font-mono"><span class="text-muted-foreground truncate font-medium max-w-[140px]">HIP FLEXION ACTUATOR</span><div class="flex items-center gap-1.5"><span class="font-bold text-foreground tabular-nums">67 Nm</span><span class="text-[8px] font-bold px-1 py-0.2 rounded border bg-success/10 text-success border-success/30">NOMINAL</span></div></div><div class="w-full bg-muted h-2 rounded-full overflow-hidden p-0.5 border border-border/80"><div class="h-full rounded-full bg-primary transition-all duration-150 ease-out" style="width: 67.0304%;"></div></div></div><div class="p-2.5 bg-card rounded-lg border border-border flex flex-col gap-1.5 shadow-2xs hover:border-primary/40 transition-colors"><div class="flex items-center justify-between text-[10px] font-mono"><span class="text-muted-foreground truncate font-medium max-w-[140px]">KNEE HARMONIC DRIVE</span><div class="flex items-center gap-1.5"><span class="font-bold text-foreground tabular-nums">72 Nm</span><span class="text-[8px] font-bold px-1 py-0.2 rounded border bg-success/10 text-success border-success/30">OPTIMAL</span></div></div><div class="w-full bg-muted h-2 rounded-full overflow-hidden p-0.5 border border-border/80"><div class="h-full rounded-full bg-success transition-all duration-150 ease-out" style="width: 72.0346%;"></div></div></div><div class="p-2.5 bg-card rounded-lg border border-border flex flex-col gap-1.5 shadow-2xs hover:border-primary/40 transition-colors"><div class="flex items-center justify-between text-[10px] font-mono"><span class="text-muted-foreground truncate font-medium max-w-[140px]">ARM JOINT KINEMATICS</span><div class="flex items-center gap-1.5"><span class="font-bold text-foreground tabular-nums">64 rad/s</span><span class="text-[8px] font-bold px-1 py-0.2 rounded border bg-success/10 text-success border-success/30">ACTIVE</span></div></div><div class="w-full bg-muted h-2 rounded-full overflow-hidden p-0.5 border border-border/80"><div class="h-full rounded-full bg-primary transition-all duration-150 ease-out" style="width: 64.3216%;"></div></div></div><div class="p-2.5 bg-card rounded-lg border border-border flex flex-col gap-1.5 shadow-2xs hover:border-primary/40 transition-colors"><div class="flex items-center justify-between text-[10px] font-mono"><span class="text-muted-foreground truncate font-medium max-w-[140px]">THERMAL CORE LOAD</span><div class="flex items-center gap-1.5"><span class="font-bold text-foreground tabular-nums">68 °C</span><span class="text-[8px] font-bold px-1 py-0.2 rounded border bg-success/10 text-success border-success/30">NORMAL</span></div></div><div class="w-full bg-muted h-2 rounded-full overflow-hidden p-0.5 border border-border/80"><div class="h-full rounded-full bg-warning transition-all duration-150 ease-out" style="width: 68.375%;"></div></div></div><div class="p-2.5 bg-card rounded-lg border border-border flex flex-col gap-1.5 shadow-2xs hover:border-primary/40 transition-colors"><div class="flex items-center justify-between text-[10px] font-mono"><span class="text-muted-foreground truncate font-medium max-w-[140px]">ROTARY TOOL ENGAGEMENT</span><div class="flex items-center gap-1.5"><span class="font-bold text-foreground tabular-nums">76 RPM</span><span class="text-[8px] font-bold px-1 py-0.2 rounded border bg-success/10 text-success border-success/30">ENGAGED</span></div></div><div class="w-full bg-muted h-2 rounded-full overflow-hidden p-0.5 border border-border/80"><div class="h-full rounded-full bg-primary transition-all duration-150 ease-out" style="width: 76.3655%;"></div></div></div><div class="p-2.5 bg-card rounded-lg border border-border flex flex-col gap-1.5 shadow-2xs hover:border-primary/40 transition-colors"><div class="flex items-center justify-between text-[10px] font-mono"><span class="text-muted-foreground truncate font-medium max-w-[140px]">CAN FD BUS SYNCHRONY</span><div class="flex items-center gap-1.5"><span class="font-bold text-foreground tabular-nums">98 %</span><span class="text-[8px] font-bold px-1 py-0.2 rounded border bg-success/10 text-success border-success/30">LOCKED</span></div></div><div class="w-full bg-muted h-2 rounded-full overflow-hidden p-0.5 border border-border/80"><div class="h-full rounded-full bg-success transition-all duration-150 ease-out" style="width: 97.5%;"></div></div></div></div></div><div class="p-4 bg-card flex flex-col gap-4"><div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center"><div class="flex flex-col gap-1.5"><label class="text-[11px] font-mono font-bold text-muted-foreground uppercase tracking-wider">System Mode</label><div class="flex bg-muted rounded-full p-1 border border-border h-10"><button type="button" class="flex-1 text-center text-xs font-mono font-medium rounded-full transition-all cursor-pointer capitalize text-muted-foreground hover:text-foreground">standby</button><button type="button" class="flex-1 text-center text-xs font-mono font-medium rounded-full transition-all cursor-pointer capitalize bg-primary text-white font-bold shadow-xs">active</button><button type="button" class="flex-1 text-center text-xs font-mono font-medium rounded-full transition-all cursor-pointer capitalize text-muted-foreground hover:text-foreground">boost</button></div></div><div class="flex flex-col gap-1.5"><div class="flex justify-between items-center font-mono"><label class="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">Actuator Torque Load</label><span class="text-xs font-bold tabular-nums text-primary">58%</span></div><div class="flex items-center h-10 px-1"><span dir="ltr" data-orientation="horizontal" aria-disabled="false" class="relative flex items-center w-full touch-none select-none h-6 cursor-pointer" aria-label="Actuator Torque Load Slider" style="--radix-slider-thumb-transform: translateX(-50%);"><span data-orientation="horizontal" class="relative grow rounded-full h-2 bg-muted border border-border"><span data-orientation="horizontal" class="absolute h-full rounded-full bg-primary" style="left: 0%; right: 46.6667%;"></span></span><span style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(53.3333% - 0.666667px);"><span role="slider" aria-valuemin="10" aria-valuemax="100" aria-orientation="horizontal" data-orientation="horizontal" tabindex="0" class="block w-5 h-5 rounded-full bg-white border-2 border-primary shadow-sm hover:scale-110 focus:outline-none transition-transform" style="" data-radix-collection-item="" aria-valuenow="58"></span></span></span></div></div><div class="flex flex-col gap-1.5"><div class="flex justify-between items-center font-mono"><label class="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">End-Effector Drill Tool</label><span class="text-xs font-bold text-success">3818 RPM</span></div><div class="flex bg-muted rounded-full p-1 border border-border h-10"><button type="button" class="flex-1 text-center text-xs font-mono font-medium rounded-full transition-all cursor-pointer bg-success text-white font-bold shadow-xs">ENGAGE</button><button type="button" class="flex-1 text-center text-xs font-mono font-medium rounded-full transition-all cursor-pointer text-muted-foreground hover:text-foreground">DISENGAGE</button></div></div></div></div></div></div></body></html>
